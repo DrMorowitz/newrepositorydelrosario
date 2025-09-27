@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageCircle, ChevronDown } from 'lucide-react';
 import CloudinaryLogo from './CloudinaryLogo';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { 
@@ -19,6 +19,7 @@ import {
 const Header = () => {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { isScrolled } = useScrollPosition(50);
 
   const isActiveRoute = (path: string) => {
@@ -104,50 +105,145 @@ const Header = () => {
             </Link>
           </motion.div>
 
-          {/* Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            <Link
-              href="/"
-              className={`font-medium transition-colors hover:text-primary ${
-                isActiveRoute('/') ? 'text-primary' : 'text-muted-foreground'
-              }`}
-            >
-              Inicio
-            </Link>
-            <Link
-              href="/sobre-mi"
-              className={`font-medium transition-colors hover:text-primary ${
-                isActiveRoute('/sobre-mi') ? 'text-primary' : 'text-muted-foreground'
-              }`}
-            >
-              Sobre Mí
-            </Link>
-            <Link
-              href="/servicios"
-              className={`font-medium transition-colors hover:text-primary ${
-                isActiveRoute('/servicios') ? 'text-primary' : 'text-muted-foreground'
-              }`}
-            >
-              Servicios
-            </Link>
-            <Link
-              href="/blog"
-              className={`font-medium transition-colors hover:text-primary ${
-                isActiveRoute('/blog') ? 'text-primary' : 'text-muted-foreground'
-              }`}
-            >
-              Blog
-            </Link>
-            <Link
-              href="/contacto"
-              className={`font-medium transition-colors hover:text-primary ${
-                isActiveRoute('/contacto') ? 'text-primary' : 'text-muted-foreground'
-              }`}
-            >
-              Contacto
-            </Link>
+          {/* Centered Desktop Navigation */}
+          <nav className="hidden lg:flex items-center justify-center space-x-8 flex-1">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="/"
+                className={`font-semibold text-base transition-all duration-300 hover:text-primary ${
+                  isActiveRoute('/') ? 'text-primary border-b-2 border-primary pb-1' : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                Inicio
+              </Link>
+            </motion.div>
+            
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="/sobre-mi"
+                className={`font-semibold text-base transition-all duration-300 hover:text-primary ${
+                  isActiveRoute('/sobre-mi') ? 'text-primary border-b-2 border-primary pb-1' : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                Sobre Mí
+              </Link>
+            </motion.div>
+            
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="/servicios"
+                className={`font-semibold text-base transition-all duration-300 hover:text-primary ${
+                  isActiveRoute('/servicios') ? 'text-primary border-b-2 border-primary pb-1' : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                Servicios
+              </Link>
+            </motion.div>
+            
+            {/* Blog Dropdown */}
+            <div className="relative">
+              <motion.button
+                className={`flex items-center font-semibold text-base transition-all duration-300 hover:text-primary ${
+                  pathname?.startsWith('/blog') ? 'text-primary border-b-2 border-primary pb-1' : 'text-muted-foreground hover:text-foreground'
+                }`}
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Blog
+                <motion.div
+                  animate={{ rotate: isDropdownOpen ? 180 : 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </motion.div>
+              </motion.button>
+              
+              <AnimatePresence>
+                {isDropdownOpen && (
+                  <motion.div
+                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-border z-50"
+                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    onMouseEnter={() => setIsDropdownOpen(true)}
+                    onMouseLeave={() => setIsDropdownOpen(false)}
+                  >
+                    <div className="py-2">
+                      <Link
+                        href="/blog"
+                        className="block px-4 py-3 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                      >
+                        Todos los Artículos
+                      </Link>
+                      <div className="border-t border-border my-1"></div>
+                      <Link
+                        href="/blog/condiciones-comunes"
+                        className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                      >
+                        Condiciones Comunes
+                      </Link>
+                      <Link
+                        href="/blog/sintomas-alerta"
+                        className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                      >
+                        Síntomas de Alerta
+                      </Link>
+                      <Link
+                        href="/blog/procedimientos"
+                        className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                      >
+                        Procedimientos
+                      </Link>
+                      <Link
+                        href="/blog/prevencion"
+                        className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                      >
+                        Prevención
+                      </Link>
+                      <Link
+                        href="/blog/preguntas-frecuentes"
+                        className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                      >
+                        Preguntas Frecuentes
+                      </Link>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+            
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="/contacto"
+                className={`font-semibold text-base transition-all duration-300 hover:text-primary ${
+                  isActiveRoute('/contacto') ? 'text-primary border-b-2 border-primary pb-1' : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                Contacto
+              </Link>
+            </motion.div>
           </nav>
 
+          {/* Desktop WhatsApp Button */}
+          <div className="hidden lg:flex">
+            <motion.div
+              variants={buttonAnimation}
+              whileHover="hover"
+              whileTap="tap"
+            >
+              <Button
+                onClick={handleWhatsApp}
+                className="btn-whatsapp flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white"
+                size="sm"
+              >
+                <MessageCircle className="h-4 w-4" />
+                WhatsApp
+              </Button>
+            </motion.div>
+          </div>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
