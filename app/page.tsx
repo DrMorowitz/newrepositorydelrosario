@@ -39,13 +39,12 @@ export default function HomePage() {
       <main>
         <Hero />
         <StatsSection />
-        {/* Temporarily commented out components causing build issues */}
-        {/* <ServicesSection />
+        <ServicesSection />
         <FeatureSection />
         <BlogSection />
         <WhyChooseSection />
         <TestimonialsSection />
-        <CTASection /> */}
+        <CTASection />
       </main>
     </div>
   );
