@@ -291,7 +291,7 @@
   }
 
   /* Content visibility fallback - ensure content is never completely hidden */
-  @media (max-width: 1200px) {
+  @media (max-width: 1023px) {
     /* Override ALL Framer Motion inline styles EXCEPT hero video and FAQ content */
     [data-framer-motion]:not(.hero-video-bg):not(.hero-video):not(.faq-content),
     section[style*="opacity: 0"]:not(.hero-section),
@@ -309,11 +309,12 @@
       visibility: visible !important;
     }
     
-    /* Restore necessary hidden elements */
+    /* Restore necessary hidden elements including desktop navigation */
     .hidden,
     [style*="display: none"],
     [aria-hidden="true"],
-    .sr-only {
+    .sr-only,
+    .lg\\:flex.hidden {
       opacity: 0 !important;
       visibility: hidden !important;
       display: none !important;
