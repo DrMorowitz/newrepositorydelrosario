@@ -309,14 +309,32 @@
       visibility: visible !important;
     }
     
-    /* Restore necessary hidden elements including desktop navigation */
-    .hidden,
+    /* Restore necessary hidden elements but preserve responsive navigation */
+    .hidden:not(.lg\\:flex),
     [style*="display: none"],
     [aria-hidden="true"],
-    .sr-only,
-    .lg\\:flex.hidden {
+    .sr-only {
       opacity: 0 !important;
       visibility: hidden !important;
+      display: none !important;
+    }
+    
+    /* Ensure mobile menu button stays hidden on desktop */
+    .lg\\:hidden {
+      display: none !important;
+    }
+  }
+
+  /* Force desktop navigation to be visible on desktop screens */
+  @media (min-width: 1024px) {
+    .hidden.lg\\:flex {
+      display: flex !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    
+    /* Ensure mobile menu button is hidden on desktop */
+    .lg\\:hidden {
       display: none !important;
     }
   }
