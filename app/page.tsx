@@ -1,6 +1,5 @@
 "use client";
 
-import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import StatsSection from '@/components/StatsSection';
 import ServicesSection from '@/components/ServicesSection';
@@ -30,22 +29,19 @@ const combinedSchema = {
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema) }}
       />
-      <Header />
-      <main>
-        <Hero />
-        <StatsSection />
-        <ServicesSection />
-        <FeatureSection />
-        <BlogSection />
-        <WhyChooseSection />
-        <TestimonialsSection />
-        <CTASection />
-      </main>
-    </div>
+      <Hero />
+      <StatsSection />
+      <ServicesSection />
+      <FeatureSection />
+      <BlogSection />
+      <WhyChooseSection />
+      <TestimonialsSection />
+      <CTASection />
+    </>
   );
 }

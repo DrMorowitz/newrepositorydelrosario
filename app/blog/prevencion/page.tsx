@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Header from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Shield, Droplets, Heart, Activity, Calendar, User, CheckCircle } from 'lucide-react';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -150,8 +149,8 @@ const Prevencion = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Header />
+    <>
+      
       
       <main>
         {/* Breadcrumb */}
@@ -423,7 +422,7 @@ const Prevencion = () => {
           </div>
         </motion.section>
       </main>
-    </div>
+    </>
   );
 };
 

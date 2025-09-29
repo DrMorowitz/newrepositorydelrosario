@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react';
-import Header from '@/components/Header';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -166,8 +165,8 @@ const ServicesPage = () => {
   const currentContent = content[language];
 
   return (
-    <div className="min-h-screen">
-      <Header />
+    <>
+      
       <main>
         {/* Hero Section */}
         <section className="section-padding bg-gradient-to-br from-primary/10 to-primary/5">
@@ -336,7 +335,7 @@ const ServicesPage = () => {
           </div>
         </section>
       </main>
-    </div>
+    </>
   );
 };
 

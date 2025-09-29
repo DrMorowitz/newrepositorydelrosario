@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Header from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Stethoscope, Calendar, Clock, User, Activity, Zap, Target, Scissors } from 'lucide-react';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -220,8 +219,8 @@ const Procedimientos = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Header />
+    <>
+      
       
       <main>
         {/* Breadcrumb */}
@@ -535,7 +534,7 @@ const Procedimientos = () => {
           </div>
         </motion.section>
       </main>
-    </div>
+    </>
   );
 };
 

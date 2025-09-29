@@ -6,8 +6,48 @@
 
 /* Medical Professional Design System - Dr. Javier del Rosario */
 
+/* Animation Fallback - Ensures content is visible even if JS animations fail */
+@keyframes fadeInFallback {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Apply fallback animation to elements that might be hidden by JS animations */
+section, .hero-section, .medical-card, [data-framer-motion] {
+  animation: fadeInFallback 0.5s ease-out 1s both;
+}
+
+/* Force visibility of all content after a short delay to prevent blank page */
+section * {
+  animation: fadeInFallback 0.3s ease-out 0.8s both;
+}
+
+/* Specific fix for elements with inline opacity styles */
+section[style*="opacity:0"],
+div[style*="opacity:0"],
+h1[style*="opacity:0"],
+h2[style*="opacity:0"],
+p[style*="opacity:0"],
+.hero-section[style*="opacity:0"] {
+  animation: fadeInFallback 0.3s ease-out 0.5s both !important;
+  opacity: 1 !important;
+}
+
+/* Ensure all text content is visible */
+.hero-section h1,
+.hero-section p,
+.section-container h2,
+.section-container p,
+.medical-card {
+  opacity: 1 !important;
+  animation: fadeInFallback 0.3s ease-out 0.3s both;
+}
+
 @layer base {
   :root {
+    /* Navbar height variable */
+    --navbar-height: 4rem;
+    
     /* Medical Brand Colors - HSL format */
     --background: 210 40% 98%;
     --foreground: 215 16% 20%;
@@ -135,6 +175,32 @@
 }
 
 @layer components {
+  /* Modern Navbar Components */
+  .navbar-dropdown {
+    @apply invisible opacity-0 pointer-events-none;
+    @apply group-hover:visible group-hover:opacity-100 group-hover:pointer-events-auto;
+    @apply animate-navbar-dropdown;
+  }
+
+  .navbar-sticky {
+    @apply sticky top-0;
+    @apply animate-navbar-slide-down;
+    @apply backdrop-blur-navbar;
+    height: var(--navbar-height);
+  }
+
+  .navbar-menu-item {
+    @apply flex items-center gap-x-1 whitespace-pre text-sm;
+    @apply transition-colors duration-200;
+    @apply hover:text-navbar-light-text dark:hover:text-navbar-dark-text;
+  }
+
+  .navbar-dropdown-item {
+    @apply flex items-center gap-3 rounded-[14px] p-2;
+    @apply transition-colors duration-200;
+    @apply hover:bg-navbar-light-hover dark:hover:bg-navbar-dark-hover;
+  }
+
   /* Medical Professional Components */
   .hero-section {
     @apply relative min-h-screen flex items-center justify-center overflow-hidden;
@@ -325,28 +391,7 @@
     }
   }
 
-  /* Force desktop navigation to be visible on desktop screens */
-  @media (min-width: 1024px) {
-    .hidden.lg\\:flex {
-      display: flex !important;
-      opacity: 1 !important;
-      visibility: visible !important;
-    }
-    
-    /* Ensure mobile menu button is hidden on desktop */
-    .lg\\:hidden {
-      display: none !important;
-    }
-    
-    /* Force dropdown menu visibility - override any hiding CSS */
-    .absolute.top-full {
-      position: absolute !important;
-      opacity: 1 !important;
-      visibility: visible !important;
-      display: block !important;
-      z-index: 1000 !important;
-    }
-  }
+  /* Clean modern navigation - no complex overrides needed */
 
   /* Global content visibility fallback for Next.js - ensure nothing is completely invisible */
   section[style*="opacity: 0"],

@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react';
-import Header from '@/components/Header';
 import ContactForm from '@/components/ContactForm';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -116,8 +115,8 @@ const ContactPage = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Header />
+    <>
+      
       <main>
         {/* Hero Section */}
         <section className="section-padding bg-gradient-to-br from-primary/10 to-primary/5">
@@ -332,7 +331,7 @@ const ContactPage = () => {
           </div>
         </section>
       </main>
-    </div>
+    </>
   );
 };
 

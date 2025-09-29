@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Header from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, AlertTriangle, Calendar, Clock, User, Phone } from 'lucide-react';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -135,8 +134,8 @@ const SintomasAlerta = () => {
   };
 
   return (
-    <div className="min-h-screen">
-      <Header />
+    <>
+      
       
       <main>
         {/* Breadcrumb */}
@@ -402,7 +401,7 @@ const SintomasAlerta = () => {
           </div>
         </motion.section>
       </main>
-    </div>
+    </>
   );
 };
 

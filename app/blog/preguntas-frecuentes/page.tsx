@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Header from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, HelpCircle, ChevronDown, Calendar, User, DollarSign, Clock, Shield } from 'lucide-react';
 import FAQAccordion from '@/components/FAQAccordion';
@@ -302,8 +301,8 @@ const PreguntasFrecuentes = () => {
 
 
   return (
-    <div className="min-h-screen">
-      <Header />
+    <>
+      
       
       <main>
         {/* Breadcrumb */}
@@ -495,7 +494,7 @@ const PreguntasFrecuentes = () => {
           </div>
         </motion.section>
       </main>
-    </div>
+    </>
   );
 };
 

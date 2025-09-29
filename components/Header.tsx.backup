@@ -1,0 +1,502 @@
+"use client";
+
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Menu, X, MessageCircle, ChevronDown } from 'lucide-react';
+
+const Header = () => {
+  const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
+
+  const isActiveRoute = (path: string) => {
+    return pathname === path;
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleWhatsApp = () => {
+    const message = encodeURIComponent('Hola Dr. del Rosario, me gustaría agendar una consulta.');
+    window.open(`https://wa.me/50760000000?text=${message}`, '_blank');
+  };
+
+  const handleDropdownEnter = () => {
+    if (dropdownTimeout) {
+      clearTimeout(dropdownTimeout);
+      setDropdownTimeout(null);
+    }
+    setIsDropdownOpen(true);
+  };
+
+  const handleDropdownLeave = () => {
+    const timeout = setTimeout(() => {
+      setIsDropdownOpen(false);
+    }, 150); // Small delay to prevent flickering
+    setDropdownTimeout(timeout);
+  };
+
+  // Client-side mount detection
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMobileMenuOpen]);
+
+  // Cleanup dropdown timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (dropdownTimeout) {
+        clearTimeout(dropdownTimeout);
+      }
+    };
+  }, [dropdownTimeout]);
+
+  // BULLETPROOF INLINE STYLES - NO CSS CLASSES THAT CAN BE OVERRIDDEN
+  const headerStyle = {
+    position: 'sticky' as const,
+    top: '0px',
+    zIndex: '99999',
+    backgroundColor: '#ffffff',
+    borderBottom: '1px solid #e5e7eb',
+    width: '100%',
+    boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+  };
+
+  const containerStyle = {
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: '0 1rem',
+    display: 'flex',
+    alignItems: 'center',
+    height: '80px',
+    position: 'relative'
+  };
+
+  const logoStyle = {
+    height: '48px',
+    width: 'auto'
+  };
+
+  const desktopNavStyle = {
+    position: 'absolute',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '2rem',
+    height: '100%'
+  };
+
+  const linkStyle = {
+    fontSize: '16px',
+    fontWeight: '600',
+    color: '#1f2937',
+    textDecoration: 'none',
+    padding: '8px 12px',
+    borderRadius: '6px',
+    transition: 'all 0.2s ease',
+    backgroundColor: 'transparent'
+  };
+
+  const activeLinkStyle = {
+    ...linkStyle,
+    color: '#2563eb',
+    backgroundColor: '#dbeafe'
+  };
+
+  const buttonStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    fontSize: '16px',
+    fontWeight: '600',
+    color: '#1f2937',
+    backgroundColor: 'transparent',
+    border: 'none',
+    padding: '8px 12px',
+    borderRadius: '6px',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease'
+  };
+
+  const whatsappStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    backgroundColor: '#16a34a',
+    color: '#ffffff',
+    border: 'none',
+    padding: '10px 20px',
+    borderRadius: '8px',
+    fontSize: '14px',
+    fontWeight: '600',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease'
+  };
+
+  const mobileButtonStyle = {
+    display: 'none', // Will be overridden by CSS media query
+    backgroundColor: 'transparent',
+    border: 'none',
+    padding: '8px',
+    cursor: 'pointer'
+  };
+
+  const dropdownStyle = {
+    position: 'absolute' as const,
+    top: '100%',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    marginTop: '8px',
+    backgroundColor: '#ffffff',
+    border: '1px solid #e5e7eb',
+    borderRadius: '8px',
+    boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+    zIndex: '999999',
+    minWidth: '250px',
+    opacity: isDropdownOpen ? '1' : '0',
+    visibility: isDropdownOpen ? ('visible' as const) : ('hidden' as const),
+    transform: `translateX(-50%) ${isDropdownOpen ? 'translateY(0)' : 'translateY(-10px)'}`,
+    transition: 'all 0.3s ease',
+    pointerEvents: isDropdownOpen ? ('auto' as const) : ('none' as const)
+  };
+
+  const dropdownLinkStyle = {
+    display: 'block',
+    padding: '12px 16px',
+    color: '#4b5563',
+    textDecoration: 'none',
+    fontSize: '14px',
+    borderBottom: '1px solid #f3f4f6',
+    transition: 'all 0.2s ease'
+  };
+
+  return (
+    <header style={headerStyle}>
+      <div style={containerStyle}>
+        {/* Logo */}
+        <div>
+          <Link href="/" style={{ textDecoration: 'none' }}>
+            <img 
+              src="https://res.cloudinary.com/dp3gvxyft/image/upload/v1757887222/logo-desktop_uz8qvb.png"
+              alt="Dr. Javier del Rosario - Urólogo"
+              style={logoStyle}
+            />
+          </Link>
+        </div>
+
+        {/* Desktop Navigation - FORCED VISIBILITY */}
+        <nav style={desktopNavStyle}>
+          <Link
+            href="/"
+            style={isActiveRoute('/') ? activeLinkStyle : linkStyle}
+            onMouseEnter={(e) => e.target.style.backgroundColor = '#f3f4f6'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = isActiveRoute('/') ? '#dbeafe' : 'transparent'}
+          >
+            Inicio
+          </Link>
+          
+          <Link
+            href="/sobre-mi"
+            style={isActiveRoute('/sobre-mi') ? activeLinkStyle : linkStyle}
+            onMouseEnter={(e) => e.target.style.backgroundColor = '#f3f4f6'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = isActiveRoute('/sobre-mi') ? '#dbeafe' : 'transparent'}
+          >
+            Sobre Mí
+          </Link>
+          
+          <Link
+            href="/servicios"
+            style={isActiveRoute('/servicios') ? activeLinkStyle : linkStyle}
+            onMouseEnter={(e) => e.target.style.backgroundColor = '#f3f4f6'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = isActiveRoute('/servicios') ? '#dbeafe' : 'transparent'}
+          >
+            Servicios
+          </Link>
+          
+          {/* Blog Dropdown */}
+          <div 
+            style={{ position: 'relative', display: 'inline-block' }}
+            onMouseEnter={handleDropdownEnter}
+            onMouseLeave={handleDropdownLeave}
+          >
+            <button
+              style={{
+                ...buttonStyle,
+                color: pathname?.startsWith('/blog') ? '#2563eb' : '#1f2937',
+                backgroundColor: pathname?.startsWith('/blog') ? '#dbeafe' : 'transparent'
+              }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = '#f3f4f6'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = pathname?.startsWith('/blog') ? '#dbeafe' : 'transparent'}
+            >
+              Blog
+              <ChevronDown 
+                size={16} 
+                style={{ 
+                  transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                  transition: 'transform 0.2s ease'
+                }} 
+              />
+            </button>
+            
+            {/* Dropdown Menu */}
+            <div style={dropdownStyle}>
+              <Link
+                href="/blog"
+                style={dropdownLinkStyle}
+                onClick={() => setIsDropdownOpen(false)}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#dbeafe';
+                  e.target.style.color = '#2563eb';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = 'transparent';
+                  e.target.style.color = '#4b5563';
+                }}
+              >
+                📚 Todos los Artículos
+              </Link>
+              <Link
+                href="/blog/condiciones-comunes"
+                style={dropdownLinkStyle}
+                onClick={() => setIsDropdownOpen(false)}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#dbeafe';
+                  e.target.style.color = '#2563eb';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = 'transparent';
+                  e.target.style.color = '#4b5563';
+                }}
+              >
+                🏥 Condiciones Comunes
+              </Link>
+              <Link
+                href="/blog/sintomas-alerta"
+                style={dropdownLinkStyle}
+                onClick={() => setIsDropdownOpen(false)}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#dbeafe';
+                  e.target.style.color = '#2563eb';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = 'transparent';
+                  e.target.style.color = '#4b5563';
+                }}
+              >
+                ⚠️ Síntomas de Alerta
+              </Link>
+              <Link
+                href="/blog/procedimientos"
+                style={dropdownLinkStyle}
+                onClick={() => setIsDropdownOpen(false)}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#dbeafe';
+                  e.target.style.color = '#2563eb';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = 'transparent';
+                  e.target.style.color = '#4b5563';
+                }}
+              >
+                🔬 Procedimientos
+              </Link>
+              <Link
+                href="/blog/prevencion"
+                style={dropdownLinkStyle}
+                onClick={() => setIsDropdownOpen(false)}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#dbeafe';
+                  e.target.style.color = '#2563eb';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = 'transparent';
+                  e.target.style.color = '#4b5563';
+                }}
+              >
+                🛡️ Prevención
+              </Link>
+              <Link
+                href="/blog/preguntas-frecuentes"
+                style={dropdownLinkStyle}
+                onClick={() => setIsDropdownOpen(false)}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#dbeafe';
+                  e.target.style.color = '#2563eb';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = 'transparent';
+                  e.target.style.color = '#4b5563';
+                }}
+              >
+                ❓ Preguntas Frecuentes
+              </Link>
+            </div>
+          </div>
+          
+          <Link
+            href="/contacto"
+            style={isActiveRoute('/contacto') ? activeLinkStyle : linkStyle}
+            onMouseEnter={(e) => e.target.style.backgroundColor = '#f3f4f6'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = isActiveRoute('/contacto') ? '#dbeafe' : 'transparent'}
+          >
+            Contacto
+          </Link>
+        </nav>
+
+        {/* Right side spacer for centering */}
+        <div style={{ width: '48px' }}></div>
+
+        {/* Mobile Menu Button */}
+        <div className="mobile-menu-button" style={mobileButtonStyle}>
+          <button
+            onClick={toggleMobileMenu}
+            style={{ ...buttonStyle, padding: '8px' }}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div 
+          style={{
+            position: 'fixed',
+            top: '0',
+            left: '0',
+            right: '0',
+            bottom: '0',
+            backgroundColor: 'rgba(0,0,0,0.5)',
+            zIndex: '999999'
+          }}
+        >
+          <div 
+            style={{
+              position: 'fixed',
+              top: '0',
+              right: '0',
+              height: '100vh',
+              width: '300px',
+              maxWidth: '85vw',
+              backgroundColor: '#ffffff',
+              boxShadow: '-2px 0 8px rgba(0,0,0,0.1)',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >
+            {/* Mobile Header */}
+            <div 
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '1rem',
+                borderBottom: '1px solid #e5e7eb'
+              }}
+            >
+              <img 
+                src="https://res.cloudinary.com/dp3gvxyft/image/upload/v1757887221/logo-mobile_kiu9br.png"
+                alt="Dr. Javier del Rosario"
+                style={{ height: '32px', width: 'auto' }}
+              />
+              <button
+                onClick={closeMobileMenu}
+                style={{
+                  backgroundColor: 'transparent',
+                  border: 'none',
+                  padding: '8px',
+                  cursor: 'pointer'
+                }}
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Mobile Navigation */}
+            <nav style={{ flex: '1', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              {[
+                { to: "/", label: "Inicio", icon: "🏠" },
+                { to: "/sobre-mi", label: "Sobre Mí", icon: "👨‍⚕️" },
+                { to: "/servicios", label: "Servicios", icon: "🩺" },
+                { to: "/blog", label: "Blog", icon: "📚" },
+                { to: "/contacto", label: "Contacto", icon: "📞" }
+              ].map((item) => (
+                <Link
+                  key={item.to}
+                  href={item.to}
+                  onClick={closeMobileMenu}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                    padding: '12px',
+                    fontSize: '18px',
+                    fontWeight: '500',
+                    color: isActiveRoute(item.to) ? '#2563eb' : '#1f2937',
+                    backgroundColor: isActiveRoute(item.to) ? '#dbeafe' : 'transparent',
+                    textDecoration: 'none',
+                    borderRadius: '8px',
+                    borderLeft: isActiveRoute(item.to) ? '4px solid #2563eb' : 'none'
+                  }}
+                >
+                  <span style={{ fontSize: '20px' }}>{item.icon}</span>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Mobile WhatsApp Button */}
+            <div style={{ padding: '1rem', borderTop: '1px solid #e5e7eb' }}>
+              <button
+                onClick={() => {
+                  handleWhatsApp();
+                  closeMobileMenu();
+                }}
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px',
+                  backgroundColor: '#16a34a',
+                  color: '#ffffff',
+                  border: 'none',
+                  padding: '12px',
+                  borderRadius: '8px',
+                  fontSize: '16px',
+                  fontWeight: '600',
+                  cursor: 'pointer'
+                }}
+              >
+                <MessageCircle size={20} />
+                WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Header;

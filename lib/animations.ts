@@ -16,11 +16,11 @@ export const medicalEasing = {
   professional: [0.4, 0, 0.2, 1],
 } as const;
 
-// Core Animation Variants
+// Core Animation Variants - Fixed to ensure content is always visible
 export const fadeIn: Variants = {
   hidden: { 
-    opacity: 0, 
-    y: 20 
+    opacity: 1,  // Changed from 0 to 1 to ensure content is visible
+    y: 0      // Changed from 20 to 0 to prevent layout shifts
   },
   visible: { 
     opacity: 1, 
@@ -93,9 +93,9 @@ export const scaleIn: Variants = {
   }
 };
 
-// Stagger Container for Sequential Animations
+// Stagger Container for Sequential Animations - Fixed for visibility
 export const staggerContainer: Variants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 1 },  // Fixed: start visible
   visible: {
     opacity: 1,
     transition: {
@@ -118,9 +118,9 @@ export const cardHover: Variants = {
   }
 };
 
-// Hero Text Animation (for titles)
+// Hero Text Animation (for titles) - Fixed for visibility
 export const heroTextReveal: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 1, y: 0 },  // Fixed: start visible
   visible: (index: number) => ({
     opacity: 1,
     y: 0,
