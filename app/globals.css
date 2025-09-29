@@ -337,6 +337,15 @@
     .lg\\:hidden {
       display: none !important;
     }
+    
+    /* Force dropdown menu visibility - override any hiding CSS */
+    .absolute.top-full {
+      position: absolute !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: block !important;
+      z-index: 1000 !important;
+    }
   }
 
   /* Global content visibility fallback for Next.js - ensure nothing is completely invisible */

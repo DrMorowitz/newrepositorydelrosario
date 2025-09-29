@@ -54,6 +54,23 @@ const Header = () => {
     };
   }, [isMobileMenuOpen]);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isDropdownOpen) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    if (isDropdownOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isDropdownOpen]);
+
   // Force Netlify cache clear - complete rebuild required
   // This comment forces a new deployment with fresh cache
 
@@ -141,13 +158,13 @@ const Header = () => {
             </motion.div>
             
             {/* Blog Dropdown */}
-            <div className="relative">
+            <div className="relative group">
               <motion.button
                 className={`flex items-center font-semibold text-base transition-all duration-300 hover:text-primary ${
                   pathname?.startsWith('/blog') ? 'text-primary border-b-2 border-primary pb-1' : 'text-muted-foreground hover:text-foreground'
                 }`}
                 onMouseEnter={() => setIsDropdownOpen(true)}
-                onMouseLeave={() => setIsDropdownOpen(false)}
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -160,59 +177,65 @@ const Header = () => {
                 </motion.div>
               </motion.button>
               
-              <AnimatePresence>
-                {isDropdownOpen && (
-                  <motion.div
-                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-border z-50"
-                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                    onMouseEnter={() => setIsDropdownOpen(true)}
-                    onMouseLeave={() => setIsDropdownOpen(false)}
+              {/* Enhanced Dropdown with better positioning */}
+              <div
+                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 transition-all duration-200 ease-out z-[9999] ${
+                  isDropdownOpen 
+                    ? 'opacity-100 visible translate-y-0' 
+                    : 'opacity-0 invisible -translate-y-2'
+                }`}
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}
+                style={{
+                  transform: isDropdownOpen ? 'translateY(0)' : 'translateY(-8px)',
+                  pointerEvents: isDropdownOpen ? 'auto' : 'none'
+                }}
+              >
+                <div className="py-2">
+                  <Link
+                    href="/blog"
+                    className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors border-b border-gray-100"
+                    onClick={() => setIsDropdownOpen(false)}
                   >
-                    <div className="py-2">
-                      <Link
-                        href="/blog"
-                        className="block px-4 py-3 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
-                      >
-                        Todos los Artículos
-                      </Link>
-                      <div className="border-t border-border my-1"></div>
-                      <Link
-                        href="/blog/condiciones-comunes"
-                        className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
-                      >
-                        Condiciones Comunes
-                      </Link>
-                      <Link
-                        href="/blog/sintomas-alerta"
-                        className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
-                      >
-                        Síntomas de Alerta
-                      </Link>
-                      <Link
-                        href="/blog/procedimientos"
-                        className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
-                      >
-                        Procedimientos
-                      </Link>
-                      <Link
-                        href="/blog/prevencion"
-                        className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
-                      >
-                        Prevención
-                      </Link>
-                      <Link
-                        href="/blog/preguntas-frecuentes"
-                        className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
-                      >
-                        Preguntas Frecuentes
-                      </Link>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                    📚 Todos los Artículos
+                  </Link>
+                  <Link
+                    href="/blog/condiciones-comunes"
+                    className="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    🏥 Condiciones Comunes
+                  </Link>
+                  <Link
+                    href="/blog/sintomas-alerta"
+                    className="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    ⚠️ Síntomas de Alerta
+                  </Link>
+                  <Link
+                    href="/blog/procedimientos"
+                    className="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    🔬 Procedimientos
+                  </Link>
+                  <Link
+                    href="/blog/prevencion"
+                    className="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    🛡️ Prevención
+                  </Link>
+                  <Link
+                    href="/blog/preguntas-frecuentes"
+                    className="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    ❓ Preguntas Frecuentes
+                  </Link>
+                </div>
+              </div>
             </div>
             
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
