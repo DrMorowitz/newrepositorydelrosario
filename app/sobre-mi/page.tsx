@@ -129,9 +129,14 @@ export default function AboutPage() {
         title: "My Philosophy",
         content: "Each consultation is an opportunity to educate and accompany patients with evidence-based treatments.",
       },
-      research: {
-        title: "Research and Publications",
-        content: "My commitment to the advancement of urology is reflected in my participation in international clinical research, including Phase 3 studies for the treatment of metastatic prostate cancer. I have co-authored the book 'Current Trauma Management' and have presented multiple papers at national and international conferences, contributing to medical knowledge in areas such as bladder trauma, prostate cancer, and advanced urological techniques.",
+      achievements: {
+        title: "Key Achievements",
+        items: [
+          { icon: "Trophy", title: "First Place Honors", desc: "University of Panama 1993" },
+          { icon: "BookOpen", title: "15+ Publications", desc: "International research" },
+          { icon: "Globe2", title: "50+ Conferences", desc: "Global participation" },
+          { icon: "Award", title: "Chief of Residents", desc: "Urology Service 1999-2000" }
+        ]
       },
       stats: {
         title: "Experience and Achievements",
@@ -240,40 +245,40 @@ export default function AboutPage() {
               
               {/* Interactive Professional Card */}
               <div className="flex justify-center">
-                <div className="group relative w-80 h-96 bg-gradient-to-br from-primary/20 via-primary/30 to-primary/40 rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 hover:scale-105">
+                <div className="group relative w-full max-w-sm md:w-80 h-80 md:h-96 bg-gradient-to-br from-primary/20 via-primary/30 to-primary/40 rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 hover:scale-105">
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-primary/20 to-transparent group-hover:from-primary/50 transition-all duration-500"></div>
                   
                   {/* Floating Icons */}
-                  <div className="absolute top-4 right-4 animate-pulse">
-                    <div className="bg-white/30 backdrop-blur-sm rounded-full p-3 hover:bg-white/40 transition-all duration-300">
-                      <Stethoscope className="w-6 h-6 text-white" />
+                  <div className="absolute top-3 right-3 md:top-4 md:right-4 animate-pulse">
+                    <div className="bg-white/30 backdrop-blur-sm rounded-full p-2 md:p-3 hover:bg-white/40 transition-all duration-300">
+                      <Stethoscope className="w-4 h-4 md:w-6 md:h-6 text-white" />
                     </div>
                   </div>
-                  <div className="absolute top-4 left-4 animate-pulse delay-1000">
-                    <div className="bg-white/30 backdrop-blur-sm rounded-full p-3 hover:bg-white/40 transition-all duration-300">
-                      <Heart className="w-6 h-6 text-red-200" />
+                  <div className="absolute top-3 left-3 md:top-4 md:left-4 animate-pulse delay-1000">
+                    <div className="bg-white/30 backdrop-blur-sm rounded-full p-2 md:p-3 hover:bg-white/40 transition-all duration-300">
+                      <Heart className="w-4 h-4 md:w-6 md:h-6 text-red-200" />
                     </div>
                   </div>
                   
                   {/* Center Achievement Badge */}
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-8 group-hover:scale-110 transition-all duration-300">
-                      <Trophy className="w-16 h-16 text-yellow-300 animate-pulse" />
+                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 md:p-8 group-hover:scale-110 transition-all duration-300">
+                      <Trophy className="w-12 h-12 md:w-16 md:h-16 text-yellow-300 animate-pulse" />
                     </div>
                   </div>
                   
                   {/* Bottom Info Card */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-center text-white transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                    <div className="bg-white/15 backdrop-blur-md rounded-xl p-6 border border-white/20">
-                      <h3 className="font-bold text-xl mb-2">Dr. Javier del Rosario</h3>
-                      <p className="text-sm opacity-90 mb-2">Especialista en Urología</p>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-center text-white transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                    <div className="bg-white/15 backdrop-blur-md rounded-xl p-4 md:p-6 border border-white/20">
+                      <h3 className="font-bold text-lg md:text-xl mb-2">Dr. Javier del Rosario</h3>
+                      <p className="text-xs md:text-sm opacity-90 mb-2">Especialista en Urología</p>
                       <div className="flex items-center justify-center space-x-2 text-xs opacity-80">
-                        <Trophy className="w-4 h-4 text-yellow-300" />
-                        <span>I Puesto de Honor</span>
+                        <Trophy className="w-3 h-3 md:w-4 md:h-4 text-yellow-300" />
+                        <span className="text-xs">I Puesto de Honor</span>
                       </div>
                       <div className="flex items-center justify-center space-x-2 text-xs opacity-80 mt-1">
-                        <Calendar className="w-4 h-4" />
-                        <span>24+ Años de Experiencia</span>
+                        <Calendar className="w-3 h-3 md:w-4 md:h-4" />
+                        <span className="text-xs">24+ Años de Experiencia</span>
                       </div>
                     </div>
                   </div>
@@ -290,7 +295,9 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-foreground mb-12 text-center">
                 {currentContent.timeline.title}
               </h2>
-              <div className="relative">
+              
+              {/* Desktop Timeline (hidden on mobile) */}
+              <div className="relative hidden md:block">
                 <div className="absolute left-1/2 transform -translate-x-0.5 h-full w-1 bg-gradient-to-b from-primary/20 via-primary to-primary/20"></div>
                 <div className="space-y-12">
                   {currentContent.timeline.events.map((event, index) => {
@@ -318,6 +325,44 @@ export default function AboutPage() {
                           </div>
                         </div>
                         <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg z-10"></div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Mobile Timeline (visible only on mobile) */}
+              <div className="relative md:hidden">
+                <div className="absolute left-1/2 transform -translate-x-0.5 h-full w-1 bg-gradient-to-b from-primary/20 via-primary to-primary/20"></div>
+                <div className="space-y-8">
+                  {currentContent.timeline.events.map((event, index) => {
+                    const IconComponent = {
+                      Trophy: Trophy,
+                      GraduationCap: GraduationCap,
+                      Award: Award,
+                      Stethoscope: Stethoscope
+                    }[event.icon] || Award;
+                    
+                    return (
+                      <div key={index} className="relative flex flex-col items-center">
+                        {/* Center Circle */}
+                        <div className="w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg z-20 mb-4"></div>
+                        
+                        {/* Card Above Line */}
+                        <div className="w-full max-w-sm px-4">
+                          <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-primary/10">
+                            <div className="flex items-center justify-center space-x-3 mb-4">
+                              <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/30 rounded-full flex items-center justify-center">
+                                <IconComponent className="w-6 h-6 text-primary" />
+                              </div>
+                              <div className="text-center">
+                                <span className="text-primary font-bold text-xl">{event.year}</span>
+                              </div>
+                            </div>
+                            <h3 className="font-bold text-xl text-foreground mb-3 text-center">{event.title}</h3>
+                            <p className="text-muted-foreground text-center leading-relaxed">{event.desc}</p>
+                          </div>
+                        </div>
                       </div>
                     );
                   })}
@@ -377,7 +422,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-foreground mb-12 text-center">
                 {currentContent.achievements.title}
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 {currentContent.achievements.items.map((achievement, index) => {
                   const IconComponent = {
                     Trophy: Trophy,
@@ -388,16 +433,16 @@ export default function AboutPage() {
                   
                   return (
                     <div key={index} className="group">
-                      <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border border-gradient-to-br from-primary/10 to-blue-100/50 relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full"></div>
+                      <div className="bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border border-gradient-to-br from-primary/10 to-blue-100/50 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full"></div>
                         <div className="relative z-10">
-                          <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/30 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                            <IconComponent className="w-8 h-8 text-primary" />
+                          <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-primary/20 to-primary/30 rounded-2xl flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <IconComponent className="w-6 h-6 md:w-8 md:h-8 text-primary" />
                           </div>
-                          <h3 className="font-bold text-lg text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                          <h3 className="font-bold text-sm md:text-lg text-foreground mb-2 group-hover:text-primary transition-colors duration-300 leading-tight">
                             {achievement.title}
                           </h3>
-                          <p className="text-muted-foreground text-sm">
+                          <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
                             {achievement.desc}
                           </p>
                         </div>
@@ -417,14 +462,14 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-foreground mb-12 text-center">
                 {currentContent.specialties.title}
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {currentContent.specialties.items.map((item, index) => (
-                  <div key={index} className="group medical-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-10 h-10 bg-gradient-to-br from-primary/20 to-primary/30 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                        <Award className="w-5 h-5 text-primary" />
+                  <div key={index} className="group medical-card bg-white p-4 md:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+                    <div className="flex items-start space-x-3 md:space-x-4">
+                      <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary/20 to-primary/30 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <Award className="w-4 h-4 md:w-5 md:h-5 text-primary" />
                       </div>
-                      <p className="text-muted-foreground font-medium leading-relaxed">{item}</p>
+                      <p className="text-muted-foreground font-medium leading-relaxed text-sm md:text-base">{item}</p>
                     </div>
                   </div>
                 ))}
@@ -656,16 +701,16 @@ export default function AboutPage() {
                   
                   return (
                     <div key={index} className="group text-center">
-                      <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border border-cyan-100/50 hover:border-cyan-200 relative overflow-hidden">
+                      <div className="bg-white rounded-3xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border border-cyan-100/50 hover:border-cyan-200 relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-transparent to-teal-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div className="relative z-10">
-                          <div className="w-20 h-20 bg-gradient-to-br from-cyan-100 to-cyan-200 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <IconComponent className="w-10 h-10 text-cyan-600" />
+                          <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-cyan-100 to-cyan-200 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <IconComponent className="w-8 h-8 md:w-10 md:h-10 text-cyan-600" />
                           </div>
-                          <h3 className="font-bold text-xl text-foreground mb-3 group-hover:text-cyan-600 transition-colors duration-300">
+                          <h3 className="font-bold text-lg md:text-xl text-foreground mb-2 md:mb-3 group-hover:text-cyan-600 transition-colors duration-300">
                             {principle.title}
                           </h3>
-                          <p className="text-muted-foreground leading-relaxed">
+                          <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
                             {principle.desc}
                           </p>
                         </div>
