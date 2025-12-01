@@ -24,19 +24,19 @@ const FeatureSection = () => {
       step: 'Paso 1',
       title: 'Atención Personalizada',
       content: 'Cada paciente recibe atención individual y cuidado personalizado según sus necesidades específicas.',
-      image: 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
+      image: 'https://res.cloudinary.com/dp3gvxyft/image/upload/v1762881513/2_wjrfuo.png',
     },
     {
       step: 'Paso 2', 
       title: 'Explicación Dedicada de tu Condición',
       content: 'Te explicamos detalladamente tu condición médica de manera clara y comprensible para que tomes decisiones informadas.',
-      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
+      image: 'https://res.cloudinary.com/dp3gvxyft/image/upload/v1762881513/3_anu9re.png',
     },
     {
       step: 'Paso 3',
       title: 'Tratamientos Oportunos',
       content: 'Implementamos tratamientos efectivos en el momento adecuado para garantizar los mejores resultados.',
-      image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
+      image: 'https://res.cloudinary.com/dp3gvxyft/image/upload/v1762881512/1_ehqdj3.png',
     },
   ];
 

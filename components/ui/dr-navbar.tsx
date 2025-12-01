@@ -8,13 +8,13 @@ import type { NavItem } from './21st-navbar'
 
 const DrLogo = () => (
   <Link href="/" className="flex items-center space-x-2">
-    <div className="flex items-center">
+    <div className="flex items-center h-8 overflow-visible">
       <Image
         src="/logo-desktop.png"
         alt="Dr. Javier del Rosario"
-        width={120}
-        height={40}
-        className="h-8 w-auto"
+        width={150}
+        height={50}
+        className="h-10 w-auto"
         priority
       />
     </div>

@@ -35,7 +35,7 @@ const ContactForm = () => {
     e.preventDefault();
     
     // Here you would normally send the data to your backend
-    console.log('Form submitted:', formData);
+    // console.log('Form submitted:', formData);
     
     toast({
       title: "Consulta enviada",
@@ -57,7 +57,7 @@ const ContactForm = () => {
     const message = encodeURIComponent(
       `Hola Dr. del Rosario, me gustaría agendar una consulta.\n\nNombre: ${formData.fullName}\nTeléfono: ${formData.phone}\nMotivo: ${formData.consultationReason}\nUbicación preferida: ${formData.preferredLocation}`
     );
-    window.open(`https://wa.me/50760000000?text=${message}`, '_blank');
+    window.open(`https://wa.me/50765911501?text=${message}`, '_blank');
   };
 
   const handleCliniWeb = () => {

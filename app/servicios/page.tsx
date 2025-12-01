@@ -4,7 +4,7 @@ import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Activity, Zap, Target, ScanLine, DollarSign, Shield, Clock } from 'lucide-react';
+import { Activity, Zap, Target, ScanLine, Shield, Clock } from 'lucide-react';
 
 const ServicesPage = () => {
   const { language } = useLanguage();
@@ -56,22 +56,13 @@ const ServicesPage = () => {
           frequency: "Disponible en cada consulta",
           procedures: [
             "Consulta urológica integral",
-            "Ultrasonido urológico (sin costo adicional)",
+            "Ultrasonido urológico completo",
             "Evaluación de laboratorios",
             "Plan de tratamiento personalizado"
           ],
-          description: "Consulta completa que incluye evaluación clínica detallada y ultrasonido diagnóstico sin costo adicional para una valoración integral.",
+          description: "Consulta completa que incluye evaluación clínica detallada y ultrasonido diagnóstico para una valoración integral.",
         }
       ],
-      pricing: {
-        title: "Información de Consulta",
-        items: [
-          { label: "Consulta pacientes no jubilados", price: "$70" },
-          { label: "Consulta pacientes jubilados", price: "$60" },
-          { label: "Ultrasonido urológico", price: "Incluido sin costo" },
-          { label: "Seguimiento post-operatorio", price: "Incluido" }
-        ]
-      },
       insurance: {
         title: "Seguros Médicos Aceptados",
         providers: [
@@ -131,22 +122,13 @@ const ServicesPage = () => {
           frequency: "Available in each consultation",
           procedures: [
             "Comprehensive urological consultation",
-            "Urological ultrasound (no additional cost)",
+            "Complete urological ultrasound",
             "Laboratory evaluation",
             "Personalized treatment plan"
           ],
-          description: "Complete consultation that includes detailed clinical evaluation and diagnostic ultrasound at no additional cost for comprehensive assessment.",
+          description: "Complete consultation that includes detailed clinical evaluation and diagnostic ultrasound for comprehensive assessment.",
         }
       ],
-      pricing: {
-        title: "Consultation Information",
-        items: [
-          { label: "Consultation non-retirees", price: "$70" },
-          { label: "Consultation retirees", price: "$60" },
-          { label: "Urological ultrasound", price: "Included at no cost" },
-          { label: "Post-operative follow-up", price: "Included" }
-        ]
-      },
       insurance: {
         title: "Accepted Medical Insurance",
         providers: [
@@ -194,7 +176,7 @@ const ServicesPage = () => {
                           <IconComponent className="w-8 h-8 text-primary" />
                         </div>
                         <div>
-                          <h2 className="text-3xl font-bold text-foreground">
+                          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
                             {service.title}
                           </h2>
                           <p className="text-primary font-medium">
@@ -206,7 +188,8 @@ const ServicesPage = () => {
                         {service.description}
                       </p>
                       <Link href="/contacto">
-                        <Button className="btn-primary">
+                        <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0">
+                          <Activity className="mr-2 h-5 w-5" />
                           {currentContent.cta}
                         </Button>
                       </Link>
@@ -232,35 +215,24 @@ const ServicesPage = () => {
           </div>
         </section>
 
-        {/* Pricing Section */}
-        <section className="section-padding bg-muted/30">
+        {/* Insurance Section */}
+        <section className="section-padding bg-gradient-to-br from-green-50 to-blue-50">
           <div className="section-container">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-8">
-                  {currentContent.pricing.title}
-                </h2>
-                <div className="space-y-4">
-                  {currentContent.pricing.items.map((item, index) => (
-                    <div key={index} className="medical-card">
-                      <div className="flex justify-between items-center">
-                        <span className="text-muted-foreground">{item.label}</span>
-                        <span className="text-2xl font-bold text-primary">{item.price}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold text-foreground mb-4">
                   {currentContent.insurance.title}
                 </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <p className="text-lg text-muted-foreground">
+                  Trabajamos con las principales aseguradoras de Panamá
+                </p>
+              </div>
+              <div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {currentContent.insurance.providers.map((provider, index) => (
-                    <div key={index} className="medical-card text-center">
-                      <Shield className="w-8 h-8 text-primary mx-auto mb-3" />
-                      <p className="text-sm font-medium text-muted-foreground">
+                    <div key={index} className="bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-100">
+                      <Shield className="w-12 h-12 text-green-600 mx-auto mb-4" />
+                      <p className="text-base font-semibold text-gray-800">
                         {provider}
                       </p>
                     </div>
@@ -322,12 +294,14 @@ const ServicesPage = () => {
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contacto">
-                <Button className="btn-primary">
+                <Button className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0">
+                  <Activity className="mr-2 h-5 w-5" />
                   Contactar Ahora
                 </Button>
               </Link>
               <Link href="/sobre-mi">
-                <Button variant="outline" className="btn-secondary">
+                <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0">
+                  <Shield className="mr-2 h-5 w-5" />
                   Conoce al Dr. del Rosario
                 </Button>
               </Link>

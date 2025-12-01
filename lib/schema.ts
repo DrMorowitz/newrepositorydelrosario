@@ -63,10 +63,10 @@ export const generateMedicalBusinessSchema = () => ({
       "addressCountry": "PA"
     }
   ],
-  "telephone": "+507-6000-0000",
+  "telephone": "+507-6591-1501",
   "url": "https://drjavierdelrosario.com",
   "sameAs": [
-    "https://wa.me/50760000000"
+    "https://wa.me/50765911501"
   ],
   "openingHours": "Mo,Tu,We,Th,Fr 08:00-17:00",
   "acceptedPaymentMethod": [
@@ -227,12 +227,12 @@ export const generateLocalBusinessSchema = () => ({
   "name": "Dr. Javier del Rosario - Urólogo",
   "description": "Consulta urológica especializada en Panamá",
   "url": "https://drjavierdelrosario.com",
-  "telephone": "+507-6000-0000",
+  "telephone": "+507-6591-1501",
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Consultorios médicos",
-    "addressLocality": "Ciudad de Panamá, Coronado, Colón", 
+    "addressLocality": "Ciudad de Panamá, Coronado, Colón",
     "addressRegion": "Panamá",
     "postalCode": "00000",
     "addressCountry": "PA"
@@ -251,6 +251,6 @@ export const generateLocalBusinessSchema = () => ({
     }
   ],
   "sameAs": [
-    "https://wa.me/50760000000"
+    "https://wa.me/50765911501"
   ]
 });

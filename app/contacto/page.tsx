@@ -1,10 +1,9 @@
 'use client'
 
 import React from 'react';
-import ContactForm from '@/components/ContactForm';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { MapPin, Phone, Clock, MessageCircle, Calendar, Shield } from 'lucide-react';
+import { MapPin, Phone, Clock, MessageCircle, Shield } from 'lucide-react';
 
 const ContactPage = () => {
   const { language } = useLanguage();
@@ -17,7 +16,7 @@ const ContactPage = () => {
         title: "Nuestras Ubicaciones",
         panama: {
           name: "The Panama Clinic",
-          address: "Ciudad de Panamá\nConsultorio Principal",
+          address: "Piso 23 Consultorio 2304\nCiudad de Panamá",
           schedule: "Lunes a Viernes: 8:00 AM - 5:00 PM"
         },
         coronado: {
@@ -34,16 +33,11 @@ const ContactPage = () => {
       contact: {
         title: "Información de Contacto",
         phone: {
-          panama: "+507 123-4567",
-          coronado: "+507 240-5432",
-          colon: "+507 441-9876",
-          whatsapp: "+507 6000-0000"
+          panama: "+507 6591-1501",
+          coronado: "+507 6591-1501",
+          colon: "+507 6591-1501",
+          whatsapp: "+507 6591-1501"
         }
-      },
-      cliniweb: {
-        title: "Agenda en CliniWeb",
-        description: "Sistema de citas en línea disponible 24/7",
-        instructions: "1. Ingresa a CliniWeb\n2. Busca 'Dr. Javier del Rosario'\n3. Selecciona fecha y hora\n4. Confirma tu cita"
       },
       insurance: {
         title: "Seguros Aceptados",
@@ -57,7 +51,7 @@ const ContactPage = () => {
         title: "Our Locations",
         panama: {
           name: "The Panama Clinic",
-          address: "Panama City\nMain Office",
+          address: "Floor 23 Office 2304\nPanama City",
           schedule: "Monday to Friday: 8:00 AM - 5:00 PM"
         },
         coronado: {
@@ -74,16 +68,11 @@ const ContactPage = () => {
       contact: {
         title: "Contact Information",
         phone: {
-          panama: "+507 123-4567",
-          coronado: "+507 240-5432", 
-          colon: "+507 441-9876",
-          whatsapp: "+507 6000-0000"
+          panama: "+507 6591-1501",
+          coronado: "+507 6591-1501",
+          colon: "+507 6591-1501",
+          whatsapp: "+507 6591-1501"
         }
-      },
-      cliniweb: {
-        title: "Schedule on CliniWeb",
-        description: "Online appointment system available 24/7",
-        instructions: "1. Go to CliniWeb\n2. Search 'Dr. Javier del Rosario'\n3. Select date and time\n4. Confirm your appointment"
       },
       insurance: {
         title: "Accepted Insurance",
@@ -98,12 +87,9 @@ const ContactPage = () => {
     const message = encodeURIComponent(
       `Hola Dr. del Rosario, me gustaría agendar una consulta en ${location}.`
     );
-    window.open(`https://wa.me/50760000000?text=${message}`, '_blank');
+    window.open(`https://wa.me/50765911501?text=${message}`, '_blank');
   };
 
-  const handleCliniWeb = () => {
-    window.open('https://cliniweb.com/dr-javier-del-rosario', '_blank');
-  };
 
   const insuranceProviders = [
     "Assa Compañía de Seguros",
@@ -167,17 +153,19 @@ const ContactPage = () => {
                           </span>
                         </div>
                         <div className="flex space-x-3">
-                          <Button 
-                            size="sm" 
+                          <Button
+                            size="sm"
                             className="btn-whatsapp"
                             onClick={() => handleWhatsApp('The Panama Clinic')}
                           >
                             <MessageCircle className="w-4 h-4 mr-1" />
                             WhatsApp
                           </Button>
-                          <Button size="sm" variant="outline">
-                            <Phone className="w-4 h-4 mr-1" />
-                            {currentContent.contact.phone.panama}
+                          <Button size="sm" variant="outline" asChild>
+                            <a href="https://wa.me/50765911501" target="_blank" rel="noopener noreferrer" className="underline">
+                              <Phone className="w-4 h-4 mr-1" />
+                              {currentContent.contact.phone.panama}
+                            </a>
                           </Button>
                         </div>
                       </div>
@@ -204,17 +192,19 @@ const ContactPage = () => {
                           </span>
                         </div>
                         <div className="flex space-x-3">
-                          <Button 
-                            size="sm" 
+                          <Button
+                            size="sm"
                             className="btn-whatsapp"
                             onClick={() => handleWhatsApp('CHSF-Coronado')}
                           >
                             <MessageCircle className="w-4 h-4 mr-1" />
                             WhatsApp
                           </Button>
-                          <Button size="sm" variant="outline">
-                            <Phone className="w-4 h-4 mr-1" />
-                            {currentContent.contact.phone.coronado}
+                          <Button size="sm" variant="outline" asChild>
+                            <a href="https://wa.me/50765911501" target="_blank" rel="noopener noreferrer" className="underline">
+                              <Phone className="w-4 h-4 mr-1" />
+                              {currentContent.contact.phone.coronado}
+                            </a>
                           </Button>
                         </div>
                       </div>
@@ -241,17 +231,19 @@ const ContactPage = () => {
                           </span>
                         </div>
                         <div className="flex space-x-3">
-                          <Button 
-                            size="sm" 
+                          <Button
+                            size="sm"
                             className="btn-whatsapp"
                             onClick={() => handleWhatsApp('Centro Médico del Caribe-Colón')}
                           >
                             <MessageCircle className="w-4 h-4 mr-1" />
                             WhatsApp
                           </Button>
-                          <Button size="sm" variant="outline">
-                            <Phone className="w-4 h-4 mr-1" />
-                            {currentContent.contact.phone.colon}
+                          <Button size="sm" variant="outline" asChild>
+                            <a href="https://wa.me/50765911501" target="_blank" rel="noopener noreferrer" className="underline">
+                              <Phone className="w-4 h-4 mr-1" />
+                              {currentContent.contact.phone.colon}
+                            </a>
                           </Button>
                         </div>
                       </div>
@@ -260,42 +252,58 @@ const ContactPage = () => {
                 </div>
               </div>
 
-              {/* CliniWeb Section */}
+              {/* Google Maps Section */}
               <div>
                 <h2 className="text-3xl font-bold text-foreground mb-8">
-                  {currentContent.cliniweb.title}
+                  Ubicación Principal - The Panama Clinic
                 </h2>
                 
                 <div className="medical-card">
                   <div className="text-center mb-6">
                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Calendar className="w-8 h-8 text-primary" />
+                      <MapPin className="w-8 h-8 text-primary" />
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">
-                      {currentContent.cliniweb.description}
+                      Visítanos en The Panama Clinic - Torre B Piso 23
                     </h3>
-                    <p className="text-muted-foreground whitespace-pre-line text-sm">
-                      {currentContent.cliniweb.instructions}
+                    <p className="text-muted-foreground text-sm mb-4">
+                      Ubicación principal para consultas y procedimientos especializados
                     </p>
+                    
+                    {/* WhatsApp CTA */}
+                    <Button 
+                      className="btn-whatsapp w-full mb-4" 
+                      onClick={() => handleWhatsApp('The Panama Clinic')}
+                    >
+                      <MessageCircle className="w-5 h-5 mr-2" />
+                      Agendar por WhatsApp
+                    </Button>
                   </div>
-                  
-                  <Button 
-                    className="btn-primary w-full" 
-                    onClick={handleCliniWeb}
-                  >
-                    <Calendar className="w-5 h-5 mr-2" />
-                    Ir a CliniWeb
-                  </Button>
                 </div>
 
-                {/* Google Maps Placeholder */}
+                {/* Google Maps Embed */}
                 <div className="mt-8">
-                  <div className="w-full h-64 bg-muted/50 rounded-lg border border-border flex items-center justify-center">
-                    <div className="text-center text-muted-foreground">
-                      <MapPin className="w-12 h-12 mx-auto mb-2" />
-                      <p>Google Maps</p>
-                      <p className="text-sm">Ubicaciones del Dr. del Rosario</p>
-                    </div>
+                  <div className="w-full rounded-2xl overflow-hidden shadow-lg border border-border">
+                    <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.9317598921625!2d-79.51397932557653!3d8.978426991080939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca9340cdda0c1%3A0x6e857350dc9807c0!2sTHE%20PANAM%C3%81%20CLINIC%20TORRE%20B!5e0!3m2!1sen!2spa!4v1764624677769!5m2!1sen!2spa" 
+                      width="100%" 
+                      height="400" 
+                      style={{border: 0}} 
+                      allowFullScreen
+                      loading="lazy" 
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="w-full"
+                    />
+                  </div>
+                  
+                  {/* Map Info */}
+                  <div className="mt-4 text-center">
+                    <p className="text-sm text-muted-foreground">
+                      📍 The Panama Clinic Torre B Piso 23 Consultorio 2304 - Ciudad de Panamá
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Haz clic en el mapa para ver direcciones detalladas
+                    </p>
                   </div>
                 </div>
               </div>
@@ -303,8 +311,6 @@ const ContactPage = () => {
           </div>
         </section>
 
-        {/* Contact Form */}
-        <ContactForm />
 
         {/* Insurance Section */}
         <section className="section-padding bg-muted/30">

@@ -243,42 +243,78 @@ export default function AboutPage() {
                 </Link>
               </div>
               
-              {/* Interactive Professional Card */}
+              {/* Professional Framed Portrait */}
               <div className="flex justify-center">
-                <div className="group relative w-full max-w-sm md:w-80 h-80 md:h-96 bg-gradient-to-br from-primary/20 via-primary/30 to-primary/40 rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-primary/20 to-transparent group-hover:from-primary/50 transition-all duration-500"></div>
-                  
-                  {/* Floating Icons */}
-                  <div className="absolute top-3 right-3 md:top-4 md:right-4 animate-pulse">
-                    <div className="bg-white/30 backdrop-blur-sm rounded-full p-2 md:p-3 hover:bg-white/40 transition-all duration-300">
-                      <Stethoscope className="w-4 h-4 md:w-6 md:h-6 text-white" />
-                    </div>
-                  </div>
-                  <div className="absolute top-3 left-3 md:top-4 md:left-4 animate-pulse delay-1000">
-                    <div className="bg-white/30 backdrop-blur-sm rounded-full p-2 md:p-3 hover:bg-white/40 transition-all duration-300">
-                      <Heart className="w-4 h-4 md:w-6 md:h-6 text-red-200" />
-                    </div>
-                  </div>
-                  
-                  {/* Center Achievement Badge */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 md:p-8 group-hover:scale-110 transition-all duration-300">
-                      <Trophy className="w-12 h-12 md:w-16 md:h-16 text-yellow-300 animate-pulse" />
-                    </div>
-                  </div>
-                  
-                  {/* Bottom Info Card */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-center text-white transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                    <div className="bg-white/15 backdrop-blur-md rounded-xl p-4 md:p-6 border border-white/20">
-                      <h3 className="font-bold text-lg md:text-xl mb-2">Dr. Javier del Rosario</h3>
-                      <p className="text-xs md:text-sm opacity-90 mb-2">Especialista en Urología</p>
-                      <div className="flex items-center justify-center space-x-2 text-xs opacity-80">
-                        <Trophy className="w-3 h-3 md:w-4 md:h-4 text-yellow-300" />
-                        <span className="text-xs">I Puesto de Honor</span>
+                <div className="group relative">
+                  {/* Photo Frame - Outer frame like a desk photo */}
+                  <div className="relative bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 p-4 md:p-6 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform rotate-1 hover:rotate-0">
+                    
+                    {/* Inner white matting */}
+                    <div className="relative bg-white p-3 md:p-4 shadow-inner">
+                      
+                      {/* Photo container */}
+                      <div className="relative w-64 md:w-80 h-64 md:h-96 overflow-hidden bg-gray-100">
+                        <img 
+                          src="https://res.cloudinary.com/dp3gvxyft/image/upload/v1764619624/DelRosario_Portrait_x2o5do.png"
+                          alt="Dr. Javier Antonio del Rosario Gibbs - Especialista en Urología"
+                          className="absolute inset-0 w-full h-full object-cover object-center"
+                        />
+                        
+                        {/* Subtle overlay to maintain text readability */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                       </div>
-                      <div className="flex items-center justify-center space-x-2 text-xs opacity-80 mt-1">
-                        <Calendar className="w-3 h-3 md:w-4 md:h-4" />
-                        <span className="text-xs">24+ Años de Experiencia</span>
+                      
+                      {/* Photo nameplate/plaque at bottom of frame */}
+                      <div className="absolute bottom-1 md:bottom-2 left-3 md:left-4 right-3 md:right-4">
+                        <div className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 p-2 md:p-3 text-center text-white shadow-lg transform translate-y-1 group-hover:translate-y-0 transition-all duration-300">
+                          <h3 className="font-bold text-xs md:text-sm mb-1">Dr. Javier del Rosario</h3>
+                          <p className="text-xs opacity-90">Especialista en Urología</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Floating Achievement Icons outside the frame */}
+                    <div className="absolute -top-2 -right-2 md:-top-3 md:-right-3 animate-pulse">
+                      <div className="bg-yellow-500 rounded-full p-2 md:p-3 shadow-lg border-2 border-white hover:bg-yellow-400 transition-all duration-300">
+                        <Trophy className="w-4 h-4 md:w-6 md:h-6 text-white" />
+                      </div>
+                    </div>
+                    
+                    <div className="absolute -top-2 -left-2 md:-top-3 md:-left-3 animate-pulse delay-1000">
+                      <div className="bg-blue-600 rounded-full p-2 md:p-3 shadow-lg border-2 border-white hover:bg-blue-500 transition-all duration-300">
+                        <Stethoscope className="w-4 h-4 md:w-6 md:h-6 text-white" />
+                      </div>
+                    </div>
+                    
+                    {/* Professional credentials badge */}
+                    <div className="absolute -bottom-2 -right-2 md:-bottom-3 md:-right-3">
+                      <div className="bg-green-600 rounded-full p-2 md:p-3 shadow-lg border-2 border-white hover:bg-green-500 transition-all duration-300">
+                        <Award className="w-4 h-4 md:w-6 md:h-6 text-white" />
+                      </div>
+                    </div>
+                    
+                    {/* Experience badge */}
+                    <div className="absolute -bottom-2 -left-2 md:-bottom-3 md:-left-3">
+                      <div className="bg-purple-600 rounded-full p-2 md:p-3 shadow-lg border-2 border-white hover:bg-purple-500 transition-all duration-300">
+                        <Calendar className="w-4 h-4 md:w-6 md:h-6 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Information card that appears next to the frame */}
+                  <div className="absolute top-4 -right-20 md:-right-32 bg-white p-3 md:p-4 rounded-lg shadow-lg border border-gray-200 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-500 z-10 hidden lg:block">
+                    <div className="text-sm space-y-2">
+                      <div className="flex items-center space-x-2">
+                        <Trophy className="w-4 h-4 text-yellow-500" />
+                        <span className="text-gray-700 font-medium">I Puesto de Honor</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Calendar className="w-4 h-4 text-blue-500" />
+                        <span className="text-gray-700 font-medium">24+ Años</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <BookOpen className="w-4 h-4 text-green-500" />
+                        <span className="text-gray-700 font-medium">15+ Publicaciones</span>
                       </div>
                     </div>
                   </div>
@@ -372,57 +408,51 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="section-padding bg-gradient-to-r from-primary/5 via-muted/30 to-primary/5">
+        {/* Combined Stats, Philosophy & Achievements Section */}
+        <section className="section-padding bg-gradient-to-br from-primary/5 via-blue-50/30 to-primary/5">
           <div className="section-container">
-            <h2 className="text-3xl font-bold text-foreground mb-12 text-center">
-              {currentContent.stats.title}
-            </h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {currentContent.stats.items.map((stat, index) => (
-                <div key={index} className="text-center group">
-                  <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div className="stat-number text-primary group-hover:scale-110 transition-transform duration-300">{stat.number}</div>
-                    <p className="text-muted-foreground font-medium mt-2">
-                      {stat.label}
-                    </p>
+            {/* Stats */}
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+                {currentContent.stats.title}
+              </h2>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                {currentContent.stats.items.map((stat, index) => (
+                  <div key={index} className="text-center">
+                    <div className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300">
+                      <div className="stat-number text-primary">{stat.number}</div>
+                      <p className="text-muted-foreground font-medium mt-1 text-sm">
+                        {stat.label}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
 
-        {/* Philosophy Section */}
-        <section className="section-padding bg-gradient-to-r from-primary/5 to-blue-50/50">
-          <div className="section-container">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="relative bg-white rounded-3xl p-12 shadow-2xl border border-primary/10 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-blue-50/30"></div>
-                <div className="relative z-10">
-                  <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/30 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Heart className="w-10 h-10 text-primary" />
+            {/* Philosophy */}
+            <div className="mb-16">
+              <div className="max-w-3xl mx-auto text-center">
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-primary/10">
+                  <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Heart className="w-8 h-8 text-primary" />
                   </div>
-                  <h2 className="text-3xl font-bold text-foreground mb-6">
+                  <h2 className="text-2xl font-bold text-foreground mb-4">
                     {currentContent.philosophy.title}
                   </h2>
-                  <p className="text-2xl text-muted-foreground leading-relaxed font-light italic">
+                  <p className="text-lg text-muted-foreground leading-relaxed italic">
                     "{currentContent.philosophy.content}"
                   </p>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
 
-        {/* Interactive Achievements Section */}
-        <section className="section-padding bg-gradient-to-br from-blue-50 to-primary/5">
-          <div className="section-container">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl font-bold text-foreground mb-12 text-center">
+            {/* Key Achievements */}
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
                 {currentContent.achievements.title}
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {currentContent.achievements.items.map((achievement, index) => {
                   const IconComponent = {
                     Trophy: Trophy,
@@ -432,20 +462,17 @@ export default function AboutPage() {
                   }[achievement.icon] || Award;
                   
                   return (
-                    <div key={index} className="group">
-                      <div className="bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border border-gradient-to-br from-primary/10 to-blue-100/50 relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full"></div>
-                        <div className="relative z-10">
-                          <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-primary/20 to-primary/30 rounded-2xl flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
-                            <IconComponent className="w-6 h-6 md:w-8 md:h-8 text-primary" />
-                          </div>
-                          <h3 className="font-bold text-sm md:text-lg text-foreground mb-2 group-hover:text-primary transition-colors duration-300 leading-tight">
-                            {achievement.title}
-                          </h3>
-                          <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
-                            {achievement.desc}
-                          </p>
+                    <div key={index} className="text-center">
+                      <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+                        <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-3 mx-auto">
+                          <IconComponent className="w-6 h-6 text-primary" />
                         </div>
+                        <h3 className="font-bold text-sm text-foreground mb-1 leading-tight">
+                          {achievement.title}
+                        </h3>
+                        <p className="text-muted-foreground text-xs leading-relaxed">
+                          {achievement.desc}
+                        </p>
                       </div>
                     </div>
                   );
@@ -455,320 +482,132 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Specialties Section */}
+        {/* Consolidated Professional Background Section */}
         <section className="section-padding bg-background">
           <div className="section-container">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl font-bold text-foreground mb-12 text-center">
-                {currentContent.specialties.title}
+              
+              {/* Specialties */}
+              <div className="mb-12">
+                <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
+                  {currentContent.specialties.title}
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                  {currentContent.specialties.items.slice(0, 6).map((item, index) => (
+                    <div key={index} className="bg-white p-3 rounded-lg shadow-sm border border-gray-100">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Award className="w-3 h-3 text-primary" />
+                        </div>
+                        <p className="text-muted-foreground text-sm font-medium">{item}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Education & Experience */}
+              <div className="grid md:grid-cols-2 gap-8 mb-12">
+                {/* Education */}
+                <div>
+                  <div className="flex items-center mb-4">
+                    <GraduationCap className="w-6 h-6 text-primary mr-2" />
+                    <h3 className="text-xl font-bold text-foreground">{currentContent.education.title}</h3>
+                  </div>
+                  <div className="space-y-3">
+                    {currentContent.education.items.slice(0, 3).map((item, index) => (
+                      <div key={index} className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                        <p className="text-muted-foreground text-sm">{item}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Current Experience */}
+                <div>
+                  <div className="flex items-center mb-4">
+                    <Stethoscope className="w-6 h-6 text-green-600 mr-2" />
+                    <h3 className="text-xl font-bold text-foreground">{currentContent.experience.title}</h3>
+                  </div>
+                  <div className="space-y-3">
+                    {currentContent.experience.positions.slice(0, 3).map((position, index) => (
+                      <div key={index} className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                        <div className="flex justify-between items-start mb-2">
+                          <h4 className="font-semibold text-foreground text-sm">{position.title}</h4>
+                          <span className="text-xs text-green-600 bg-green-50 px-2 py-1 rounded-full">
+                            {position.years.split(' - ')[1] || position.years}
+                          </span>
+                        </div>
+                        <p className="text-primary text-sm font-medium mb-1">{position.place}</p>
+                        <p className="text-muted-foreground text-xs">{position.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Key Research & Memberships */}
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Research Highlights */}
+                <div>
+                  <div className="flex items-center mb-4">
+                    <BookOpen className="w-6 h-6 text-purple-600 mr-2" />
+                    <h3 className="text-xl font-bold text-foreground">Investigación Destacada</h3>
+                  </div>
+                  <div className="space-y-3">
+                    {currentContent.research.items.slice(0, 3).map((research, index) => (
+                      <div key={index} className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                        <h4 className="font-semibold text-foreground text-sm mb-2">{research.title}</h4>
+                        <p className="text-muted-foreground text-xs leading-relaxed">{research.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Professional Societies */}
+                <div>
+                  <div className="flex items-center mb-4">
+                    <Globe2 className="w-6 h-6 text-blue-600 mr-2" />
+                    <h3 className="text-xl font-bold text-foreground">Membresías Profesionales</h3>
+                  </div>
+                  <div className="space-y-3">
+                    {currentContent.societies.items.map((society, index) => (
+                      <div key={index} className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                        <h4 className="font-semibold text-foreground text-sm mb-1">{society.name}</h4>
+                        <p className="text-blue-600 text-xs font-medium">{society.role}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* Simplified CTA Section */}
+        <section className="section-padding bg-primary/5">
+          <div className="section-container text-center">
+            <div className="max-w-2xl mx-auto">
+              <h2 className="text-3xl font-bold text-foreground mb-4">
+                ¿Listo para tu Consulta?
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                {currentContent.specialties.items.map((item, index) => (
-                  <div key={index} className="group medical-card bg-white p-4 md:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100">
-                    <div className="flex items-start space-x-3 md:space-x-4">
-                      <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary/20 to-primary/30 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                        <Award className="w-4 h-4 md:w-5 md:h-5 text-primary" />
-                      </div>
-                      <p className="text-muted-foreground font-medium leading-relaxed text-sm md:text-base">{item}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Education Section */}
-        <section className="section-padding bg-muted/30">
-          <div className="section-container">
-            <div className="max-w-4xl mx-auto">
-              <div className="flex items-center justify-center mb-12">
-                <GraduationCap className="w-8 h-8 text-primary mr-3" />
-                <h2 className="text-3xl font-bold text-foreground">
-                  {currentContent.education.title}
-                </h2>
-              </div>
-              <div className="grid grid-cols-1 gap-6">
-                {currentContent.education.items.map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4 medical-card bg-background p-6 rounded-lg shadow-sm">
-                    <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <GraduationCap className="w-4 h-4 text-primary" />
-                    </div>
-                    <p className="text-muted-foreground text-lg">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Current Clinical Experience */}
-        <section className="section-padding bg-gradient-to-br from-green-50/50 to-blue-50/30">
-          <div className="section-container">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
-                  <Stethoscope className="w-8 h-8 text-green-600" />
-                </div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">
-                  {currentContent.experience.title}
-                </h2>
-                <p className="text-muted-foreground text-lg">Posiciones actuales y responsabilidades profesionales</p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {currentContent.experience.positions.map((position, index) => (
-                  <div key={index} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-green-200">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <Stethoscope className="w-6 h-6 text-green-600" />
-                      </div>
-                      <span className="text-sm font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full">
-                        {position.years}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">{position.title}</h3>
-                    <p className="text-primary font-semibold mb-2">{position.place}</p>
-                    <p className="text-muted-foreground">{position.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Professional Societies */}
-        <section className="section-padding bg-background">
-          <div className="section-container">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
-                  <Globe2 className="w-8 h-8 text-blue-600" />
-                </div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">
-                  {currentContent.societies.title}
-                </h2>
-                <p className="text-muted-foreground text-lg">Membresías en organizaciones médicas prestigiosas</p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {currentContent.societies.items.map((society, index) => {
-                  const IconComponent = {
-                    Globe2: Globe2,
-                    Award: Award,
-                    Users: Users,
-                    MapPin: MapPin
-                  }[society.icon] || Globe2;
-                  
-                  return (
-                    <div key={index} className="group bg-gradient-to-r from-white to-blue-50/30 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-blue-100/50 hover:border-blue-200">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                          <IconComponent className="w-6 h-6 text-blue-600" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="font-bold text-lg text-foreground mb-2 group-hover:text-blue-600 transition-colors duration-300">
-                            {society.name}
-                          </h3>
-                          <p className="text-blue-600 font-semibold text-sm">{society.role}</p>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Research & Publications */}
-        <section className="section-padding bg-gradient-to-br from-purple-50/50 to-pink-50/30">
-          <div className="section-container">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4">
-                  <BookOpen className="w-8 h-8 text-purple-600" />
-                </div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">
-                  {currentContent.research.title}
-                </h2>
-                <p className="text-muted-foreground text-lg">Contribuciones significativas al conocimiento urológico</p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {currentContent.research.items.map((research, index) => {
-                  const IconComponent = {
-                    BookOpen: BookOpen,
-                    Award: Award,
-                    Globe2: Globe2,
-                    Stethoscope: Stethoscope
-                  }[research.icon] || BookOpen;
-                  
-                  return (
-                    <div key={index} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-purple-100/50 hover:border-purple-200 relative overflow-hidden">
-                      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-purple-100/30 to-transparent rounded-bl-full"></div>
-                      <div className="relative z-10">
-                        <div className="flex items-start space-x-4 mb-4">
-                          <div className="w-14 h-14 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                            <IconComponent className="w-7 h-7 text-purple-600" />
-                          </div>
-                          <div className="flex-1">
-                            <h3 className="font-bold text-xl text-foreground mb-2 group-hover:text-purple-600 transition-colors duration-300">
-                              {research.title}
-                            </h3>
-                            <p className="text-muted-foreground leading-relaxed">
-                              {research.desc}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* International Conferences */}
-        <section className="section-padding bg-gradient-to-br from-indigo-50/50 to-purple-50/30">
-          <div className="section-container">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-full mb-4">
-                  <Globe2 className="w-8 h-8 text-indigo-600" />
-                </div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">
-                  {currentContent.conferences.title}
-                </h2>
-                <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                  {currentContent.conferences.subtitle}
-                </p>
-              </div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {currentContent.conferences.highlights.map((conference, index) => {
-                  const IconComponent = {
-                    Globe2: Globe2,
-                    Award: Award,
-                    Users: Users,
-                    MapPin: MapPin
-                  }[conference.icon] || Globe2;
-                  
-                  return (
-                    <div key={index} className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-indigo-100/50 hover:border-indigo-200 relative overflow-hidden">
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-indigo-100/20 to-transparent rounded-bl-full"></div>
-                      <div className="relative z-10">
-                        <div className="flex items-start space-x-6">
-                          <div className="w-16 h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                            <IconComponent className="w-8 h-8 text-indigo-600" />
-                          </div>
-                          <div className="flex-1">
-                            <h3 className="font-bold text-xl text-foreground mb-3 group-hover:text-indigo-600 transition-colors duration-300">
-                              {conference.event}
-                            </h3>
-                            <p className="text-muted-foreground text-sm leading-relaxed">
-                              <span className="font-semibold text-indigo-600">Participaciones:</span> {conference.years}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Patient Care Philosophy */}
-        <section className="section-padding bg-gradient-to-r from-cyan-50/50 to-teal-50/30">
-          <div className="section-container">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-cyan-100 rounded-full mb-4">
-                  <Heart className="w-8 h-8 text-cyan-600" />
-                </div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">
-                  {currentContent.patientCare.title}
-                </h2>
-                <p className="text-muted-foreground text-lg">Principios fundamentales de mi práctica médica</p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {currentContent.patientCare.principles.map((principle, index) => {
-                  const IconComponent = {
-                    BookOpen: BookOpen,
-                    Heart: Heart,
-                    Award: Award,
-                    Clock: Clock
-                  }[principle.icon] || Heart;
-                  
-                  return (
-                    <div key={index} className="group text-center">
-                      <div className="bg-white rounded-3xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border border-cyan-100/50 hover:border-cyan-200 relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-transparent to-teal-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div className="relative z-10">
-                          <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-cyan-100 to-cyan-200 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <IconComponent className="w-8 h-8 md:w-10 md:h-10 text-cyan-600" />
-                          </div>
-                          <h3 className="font-bold text-lg md:text-xl text-foreground mb-2 md:mb-3 group-hover:text-cyan-600 transition-colors duration-300">
-                            {principle.title}
-                          </h3>
-                          <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
-                            {principle.desc}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Enhanced CTA Section */}
-        <section className="section-padding bg-gradient-to-r from-primary/10 via-primary/5 to-blue-50/50 relative overflow-hidden">
-          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-          <div className="section-container text-center relative z-10">
-            <div className="max-w-4xl mx-auto">
-              <div className="flex items-center justify-center mb-6">
-                <Clock className="w-8 h-8 text-primary mr-3 animate-pulse" />
-                <h2 className="text-4xl font-bold text-foreground">
-                  ¿Listo para tu Consulta?
-                </h2>
-              </div>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-lg text-muted-foreground mb-6">
                 Experiencia comprobada con 24+ años de dedicación a la urología
               </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contacto">
-                  <Button className="btn-primary group relative overflow-hidden px-8 py-4 text-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-                    <span className="relative z-10 flex items-center space-x-2">
-                      <Calendar className="w-5 h-5" />
-                      <span>Agendar Consulta</span>
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <Button className="btn-primary px-6 py-3">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    Agendar Consulta
                   </Button>
                 </Link>
                 <Link href="/servicios">
-                  <Button variant="outline" className="btn-secondary group px-8 py-4 text-lg border-2 hover:shadow-lg hover:scale-105 transition-all duration-300">
-                    <span className="flex items-center space-x-2">
-                      <Star className="w-5 h-5 group-hover:text-yellow-500 transition-colors duration-300" />
-                      <span>Ver Servicios</span>
-                    </span>
+                  <Button variant="outline" className="btn-secondary px-6 py-3">
+                    <Star className="w-4 h-4 mr-2" />
+                    Ver Servicios
                   </Button>
                 </Link>
-              </div>
-              <div className="mt-8 flex items-center justify-center space-x-8 text-sm text-muted-foreground">
-                <div className="flex items-center space-x-2">
-                  <Trophy className="w-4 h-4 text-yellow-500" />
-                  <span>I Puesto de Honor</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <BookOpen className="w-4 h-4 text-blue-500" />
-                  <span>15+ Publicaciones</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Users className="w-4 h-4 text-green-500" />
-                  <span>2000+ Pacientes</span>
-                </div>
               </div>
             </div>
           </div>

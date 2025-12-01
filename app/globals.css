@@ -22,6 +22,54 @@ section * {
   animation: fadeInFallback 0.3s ease-out 0.8s both;
 }
 
+/* Fix timeline visibility issues on desktop */
+@media (min-width: 768px) {
+  /* Target the specific timeline section */
+  section .relative.hidden.md\:block,
+  section .relative.hidden.md\:block *,
+  .bg-gradient-to-br.from-slate-50.to-blue-50 .relative.hidden.md\:block,
+  .bg-gradient-to-br.from-slate-50.to-blue-50 .relative.hidden.md\:block * {
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: inherit !important;
+  }
+  
+  /* Force specific color fixes for timeline elements */
+  section .bg-white,
+  .bg-gradient-to-br.from-slate-50.to-blue-50 .bg-white {
+    background-color: white !important;
+    opacity: 1 !important;
+  }
+  
+  section .text-primary,
+  .bg-gradient-to-br.from-slate-50.to-blue-50 .text-primary {
+    color: hsl(var(--primary)) !important;
+  }
+  
+  section .text-muted-foreground,
+  .bg-gradient-to-br.from-slate-50.to-blue-50 .text-muted-foreground {
+    color: hsl(var(--muted-foreground)) !important;
+  }
+  
+  section .text-foreground,
+  .bg-gradient-to-br.from-slate-50.to-blue-50 .text-foreground {
+    color: hsl(var(--foreground)) !important;
+  }
+  
+  /* Ensure all timeline content is visible */
+  section .space-y-12 > div,
+  section .space-y-12 > div * {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Override any animation delays that might hide content */
+  .bg-gradient-to-br.from-slate-50.to-blue-50 * {
+    animation-delay: 0s !important;
+    opacity: 1 !important;
+  }
+}
+
 /* Specific fix for elements with inline opacity styles */
 section[style*="opacity:0"],
 div[style*="opacity:0"],
@@ -376,7 +424,7 @@ p[style*="opacity:0"],
     }
     
     /* Restore necessary hidden elements but preserve responsive navigation */
-    .hidden:not(.lg\\:flex),
+    .hidden:not(.lg\:flex),
     [style*="display: none"],
     [aria-hidden="true"],
     .sr-only {
@@ -386,7 +434,7 @@ p[style*="opacity:0"],
     }
     
     /* Ensure mobile menu button stays hidden on desktop */
-    .lg\\:hidden {
+    .lg\:hidden {
       display: none !important;
     }
   }

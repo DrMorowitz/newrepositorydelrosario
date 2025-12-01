@@ -7,6 +7,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Footer from "@/components/Footer";
 import { DrDelRosarioNavbar } from "@/components/ui/dr-navbar";
+import ChatbotWidget from "@/components/ChatbotWidget";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
         <title>Dr. Javier del Rosario - Urólogo en Panamá</title>
         <meta name="description" content="Especialista en urología con más de 15 años de experiencia. Consultas médicas, cirugías urológicas y tratamientos especializados en Panamá." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/png" href="https://res.cloudinary.com/dp3gvxyft/image/upload/v1757887052/android-chrome-512x512_qiefcd.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
@@ -38,6 +40,7 @@ export default function RootLayout({
           <Toaster />
           <Sonner />
         </LanguageProvider>
+        <ChatbotWidget />
       </body>
     </html>
   );

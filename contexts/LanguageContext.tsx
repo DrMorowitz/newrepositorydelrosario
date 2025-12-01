@@ -42,12 +42,12 @@ const translations: Translations = {
   'stats.title': { es: 'Experiencia que Inspira Confianza', en: 'Experience That Inspires Trust' },
   'stats.experience': { es: '25+ Años de Experiencia', en: '25+ Years of Experience' },
   'stats.procedures': { es: '5,000+ Procedimientos Realizados', en: '5,000+ Procedures Performed' },
-  'stats.locations': { es: '3 Ubicaciones: The Panama Clinic, CHSF-Coronado, Centro Médico del Caribe-Colón', en: '3 Locations: The Panama Clinic, CHSF-Coronado, Centro Médico del Caribe-Colón' },
+  'stats.locations': { es: '3 Ubicaciones: The Panama Clinic Torre B Piso 23, CHSF-Coronado, Centro Médico del Caribe-Colón', en: '3 Locations: The Panama Clinic Torre B Floor 23, CHSF-Coronado, Centro Médico del Caribe-Colón' },
 
   // Services Section
   'services.title': { es: 'Servicios de Urología en Panamá', en: 'Urology Services in Panama' },
-  'services.vasectomy.title': { es: 'Vasectomía en Panamá', en: 'Vasectomy in Panama' },
-  'services.vasectomy.desc': { es: 'Procedimiento mínimamente invasivo con técnica sin bisturí y recuperación rápida', en: 'Minimally invasive procedure with no-scalpel technique and quick recovery' },
+  'services.biopsy.title': { es: 'Biopsia de Próstata', en: 'Prostate Biopsy' },
+  'services.biopsy.desc': { es: 'Diagnóstico preciso con técnica guiada por ultrasonido para detección temprana', en: 'Accurate diagnosis with ultrasound-guided technique for early detection' },
   'services.kidney.title': { es: 'Cálculos Renales - Litotricia', en: 'Kidney Stones - Lithotripsy' },
   'services.kidney.desc': { es: 'Ureteroscopía flexible y litotricia extracorpórea con tecnología avanzada', en: 'Flexible ureteroscopy and extracorporeal lithotripsy with advanced technology' },
   'services.prostate.title': { es: 'Hiperplasia Prostática (HPB)', en: 'Benign Prostatic Hyperplasia (BPH)' },

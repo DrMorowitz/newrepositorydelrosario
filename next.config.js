@@ -26,14 +26,12 @@ const nextConfig = {
   // Disable x-powered-by header for security
   poweredByHeader: false,
   
-  // Enable Turbopack for faster development
-  experimental: {
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
+  // Enable Turbopack for faster development (updated config)
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
       },
     },
   },

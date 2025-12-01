@@ -11,13 +11,13 @@ const Footer = () => {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Hola Dr. del Rosario, me gustaría más información sobre sus servicios.');
-    window.open(`https://wa.me/50760000000?text=${message}`, '_blank');
+    window.open(`https://wa.me/50765911501?text=${message}`, '_blank');
   };
 
   return (
     <footer className="bg-foreground text-background">
       <div className="section-container">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-16">
           
           {/* Logo and Description */}
           <div className="md:col-span-2">
@@ -95,15 +95,29 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-background/60" />
-                <span className="text-background/80 text-sm">The Panama Clinic, CHSF-Coronado, Centro Médico del Caribe-Colón</span>
+                <span className="text-background/80 text-sm">The Panama Clinic Torre B Piso 23, CHSF-Coronado, Centro Médico del Caribe-Colón</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-background/60" />
-                <span className="text-background/80 text-sm">+507 441-9876</span>
+                <a
+                  href="https://wa.me/50765911501"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-background/80 text-sm underline hover:text-background transition-colors"
+                >
+                  +507 6591-1501
+                </a>
               </li>
               <li className="flex items-center space-x-2">
                 <MessageCircle className="w-4 h-4 text-background/60" />
-                <span className="text-background/80 text-sm">+507 6000-0000</span>
+                <a
+                  href="https://wa.me/50765911501"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-background/80 text-sm underline hover:text-background transition-colors"
+                >
+                  +507 6591-1501
+                </a>
               </li>
             </ul>
             
@@ -118,14 +132,45 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Google Maps Section */}
+        <div className="border-t border-background/20 py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            <div className="lg:col-span-1">
+              <h3 className="font-semibold text-xl mb-4">Nuestra Ubicación Principal</h3>
+              <p className="text-background/80 mb-4">
+                📍 The Panama Clinic Torre B<br/>
+                Piso 23 Consultorio 2304<br/>
+                Ciudad de Panamá
+              </p>
+              <p className="text-background/60 text-sm">
+                Visítanos en nuestro consultorio principal equipado con tecnología de vanguardia para diagnósticos precisos.
+              </p>
+            </div>
+            <div className="lg:col-span-2">
+              <div className="rounded-xl overflow-hidden shadow-lg border border-background/20">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.9317598921625!2d-79.51397932557653!3d8.978426991080939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca9340cdda0c1%3A0x6e857350dc9807c0!2sTHE%20PANAM%C3%81%20CLINIC%20TORRE%20B!5e0!3m2!1sen!2spa!4v1764624677769!5m2!1sen!2spa" 
+                  width="100%" 
+                  height="300" 
+                  style={{border: 0}} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
         <div className="border-t border-background/20 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-background/60 text-sm">
-              © 2024 Dr. Javier del Rosario. Todos los derechos reservados.
+              © 2026 Dr. Javier del Rosario. Todos los derechos reservados.
             </p>
             <p className="text-background/60 text-sm mt-2 md:mt-0">
-              Consulta $70 no jubilados - $60 jubilados | Ultrasonido incluido
+              Especialista en Urología con 25+ años de experiencia
             </p>
           </div>
         </div>

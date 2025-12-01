@@ -38,7 +38,7 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqCategories }) => {
     },
     {
       question: "¿Cuánto cuesta una vasectomía en Panamá?",
-      answer: "El costo de la vasectomía varía según la ubicación y el método utilizado. Ofrecemos la técnica sin bisturí con mínima invasión. Para información específica sobre costos y seguros aceptados, contáctenos directamente."
+      answer: "Ofrecemos la técnica sin bisturí con mínima invasión, que es el método más moderno y efectivo. Para información específica sobre el procedimiento y seguros aceptados, contáctenos directamente."
     },
     {
       question: "¿Qué seguros médicos aceptan?",

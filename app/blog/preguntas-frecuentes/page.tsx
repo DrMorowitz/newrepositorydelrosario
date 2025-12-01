@@ -32,13 +32,15 @@ const PreguntasFrecuentes = () => {
       faqs: [
         {
           question: '¿Cuánto cobra un urólogo en Panamá?',
-          answer: `Los costos de consulta urológica en Panamá varían según la complejidad:
+          answer: `Los costos de consulta urológica en Panamá varían según la complejidad del caso y los estudios requeridos:
           
-          <strong>Consulta inicial:</strong> $80-120
-          <strong>Consulta de seguimiento:</strong> $60-80
-          <strong>Consulta con estudios:</strong> $100-150
+          <strong>Factores que influyen en el costo:</strong>
+          • Complejidad del caso clínico
+          • Necesidad de estudios adicionales (ecografía, cistoscopia)
+          • Ubicación de la consulta
+          • Experiencia del especialista
           
-          Los precios pueden variar según la ubicación, experiencia del médico y si requiere estudios adicionales como ecografía o cistoscopia.`
+          Para información específica sobre consultas y honorarios, recomendamos contactar directamente con nuestro consultorio.`
         },
         {
           question: '¿Los seguros médicos cubren consultas urológicas?',
@@ -179,7 +181,7 @@ const PreguntasFrecuentes = () => {
           • Cirugía microscópica de 2-4 horas
           • Tasa de éxito: 70-90% para permeabilidad
           • Tasa de embarazo: 50-70%
-          • Costo: 3-5 veces más que vasectomía original
+          • Procedimiento más complejo que la vasectomía original
           
           <strong>Factores que afectan el éxito:</strong>
           • Tiempo transcurrido desde la vasectomía

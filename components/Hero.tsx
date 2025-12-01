@@ -16,7 +16,7 @@ const Hero = () => {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Hola Dr. del Rosario, me gustaría agendar una consulta.');
-    window.open(`https://wa.me/50760000000?text=${message}`, '_blank');
+    window.open(`https://wa.me/50765911501?text=${message}`, '_blank');
   };
 
   // Direct Cloudinary video URLs - Production ready
@@ -58,7 +58,7 @@ const Hero = () => {
           aria-hidden="true"
           style={{ opacity: 1, visibility: 'visible' }}
           onLoadedData={() => {
-            console.log('Hero video loaded successfully');
+            // console.log('Hero video loaded successfully');
           }}
           onError={(e) => {
             console.warn('Primary video failed to load:', e);

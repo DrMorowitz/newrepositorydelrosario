@@ -20,7 +20,7 @@ const NotFound = () => {
           <p className="text-sm text-gray-600">
             Si necesitas ayuda médica urgente, contacta al{" "}
             <a 
-              href="https://wa.me/50760000000" 
+              href="https://wa.me/50765911501" 
               className="text-blue-600 hover:underline"
               target="_blank"
               rel="noopener noreferrer"

@@ -26,7 +26,7 @@ const WhatsAppButton = ({
 
   const handleWhatsApp = () => {
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/50760000000?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/50765911501?text=${encodedMessage}`, '_blank');
   };
 
   return (

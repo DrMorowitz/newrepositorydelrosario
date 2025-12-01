@@ -22,9 +22,9 @@ const ServicesSection = () => {
 
   const services = [
     {
-      icon: Activity,
-      title: t('services.vasectomy.title'),
-      description: t('services.vasectomy.desc'),
+      icon: ScanLine,
+      title: t('services.biopsy.title'),
+      description: t('services.biopsy.desc'),
       color: 'text-blue-600',
     },
     {
@@ -40,7 +40,7 @@ const ServicesSection = () => {
       color: 'text-purple-600',
     },
     {
-      icon: ScanLine,
+      icon: Activity,
       title: t('services.circumcision.title'),
       description: t('services.circumcision.desc'),
       color: 'text-orange-600',
