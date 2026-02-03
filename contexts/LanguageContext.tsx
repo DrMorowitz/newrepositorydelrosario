@@ -42,7 +42,10 @@ const translations: Translations = {
   'stats.title': { es: 'Experiencia que Inspira Confianza', en: 'Experience That Inspires Trust' },
   'stats.experience': { es: '25+ Años de Experiencia', en: '25+ Years of Experience' },
   'stats.procedures': { es: '5,000+ Procedimientos Realizados', en: '5,000+ Procedures Performed' },
-  'stats.locations': { es: '3 Ubicaciones: The Panama Clinic Torre B Piso 23, CHSF-Coronado, Centro Médico del Caribe-Colón', en: '3 Locations: The Panama Clinic Torre B Floor 23, CHSF-Coronado, Centro Médico del Caribe-Colón' },
+  'stats.locations': { 
+    es: '4 Ubicaciones: The Panama Clinic Torre B Piso 23, Consultorios Médicos Costa Pacífico-Coronado, Consultorios Médicos La Chorrera, Centro Médico del Caribe-Colón', 
+    en: '4 Locations: The Panama Clinic Torre B Floor 23, Consultorios Médicos Costa Pacífico-Coronado, Consultorios Médicos La Chorrera, Centro Médico del Caribe-Colón' 
+  },
 
   // Services Section
   'services.title': { es: 'Servicios de Urología en Panamá', en: 'Urology Services in Panama' },
