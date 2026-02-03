@@ -69,7 +69,7 @@ const StatsSection = () => {
     },
     {
       icon: MapPin,
-      number: 3,
+      number: 4,
       suffix: '',
       text: t('stats.locations'),
     },

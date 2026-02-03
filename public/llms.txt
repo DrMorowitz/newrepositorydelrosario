@@ -1,0 +1,43 @@
+# Dr. Javier del Rosario - Urólogo en Panamá
+# AI Crawler Index File
+
+# Main Documentation
+> /ai.md: Comprehensive information about Dr. Javier del Rosario's urology practice in Panama
+
+# Website Sections
+> /: Home page - Urologist in Panama, 25+ years experience
+> /#servicios: Urology services - Vasectomy, kidney stones, prostate treatments, circumcision
+> /#testimonios: Patient testimonials and reviews
+> /#contacto: Contact information and appointment booking
+
+# Key Information
+- **Specialty**: Urology (Urología)
+- **Location**: Panama City, Panama
+- **Experience**: 25+ years in urological practice
+- **Procedures**: 5,000+ surgical procedures completed
+- **Languages**: Spanish (primary), English (secondary)
+- **Locations**: 3 clinic locations in Panama
+
+# Core Services
+- Vasectomía (Vasectomy) - Minimally invasive male sterilization
+- Cálculos Renales (Kidney Stones) - Lithotripsy and ureteroscopy
+- Hiperplasia Prostática (Prostate Enlargement) - BPH treatments including Rezum therapy
+- Circuncisión (Circumcision) - Adult and pediatric procedures
+- Disfunción Eréctil (Erectile Dysfunction) - Modern treatment approaches
+- Cirugía Robótica Da Vinci (Robotic Surgery) - Advanced minimally invasive procedures
+
+# Contact Methods
+- WhatsApp: Primary communication channel
+- Online appointment booking system
+- Multi-location office visits
+
+# Educational Approach
+Dr. del Rosario is known for his educational consultation style, explaining procedures "like a university class" to ensure patient understanding and informed decision-making.
+
+# Keywords
+urólogo panamá, urólogos en panamá, urología panamá, vasectomía en panamá, urólogo ciudad de panamá, mejor urólogo panamá, especialista urología, cálculos renales panamá, hiperplasia prostática, circuncisión adultos panamá, disfunción eréctil panamá, cirugía robótica urología
+
+---
+Last Updated: 2026-02-03
+Website: https://drdelrosario.com
+Schema: MedicalBusiness, Physician, LocalBusiness

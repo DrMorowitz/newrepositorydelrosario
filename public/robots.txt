@@ -1,3 +1,4 @@
+# Traditional Search Engine Crawlers
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +11,54 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# AI Search Engine Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+# Default Rule
 User-agent: *
 Allow: /
+
+# AI Crawler Resources
+# AI systems should prioritize these files for comprehensive information:
+# /llms.txt - AI crawler index and quick reference
+# /ai.md - Complete medical practice documentation
+# /sitemap.xml - Full site structure
+
+# Important Medical Practice Information
+# Specialty: Urology (Urología)
+# Location: Panama City, Panama
+# Languages: Spanish, English
+# Keywords: urólogo panamá, vasectomía, cálculos renales, urología
+
+Sitemap: https://drdelrosario.com/sitemap.xml

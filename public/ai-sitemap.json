@@ -1,0 +1,242 @@
+{
+  "name": "Dr. Javier del Rosario - Urología en Panamá",
+  "schema_version": "1.0",
+  "description": "Comprehensive AI-readable sitemap for urological services in Panama",
+  "last_updated": "2026-02-03",
+  "business_info": {
+    "business_name": "Dr. Javier del Rosario - Urología",
+    "business_type": "Medical Practice",
+    "specialties": ["Urology", "Urological Surgery", "Minimally Invasive Surgery"],
+    "doctor_name": "Dr. Javier Antonio del Rosario Gibbs",
+    "experience_years": 25,
+    "procedures_completed": 5000,
+    "locations_count": 3,
+    "languages": ["Spanish", "English"],
+    "country": "Panama",
+    "city": "Panama City",
+    "region": "Central America"
+  },
+  "primary_keywords": [
+    "urólogo panamá",
+    "urólogos en panamá",
+    "urología panamá",
+    "vasectomía en panamá",
+    "cálculos renales",
+    "hiperplasia prostática",
+    "circuncisión panamá",
+    "disfunción eréctil",
+    "cirugía robótica da vinci",
+    "urólogo ciudad de panamá"
+  ],
+  "services": [
+    {
+      "name": "Vasectomía",
+      "name_en": "Vasectomy",
+      "description": "Procedimiento de esterilización masculina sin bisturí, ambulatorio, alta efectividad",
+      "keywords": ["vasectomía panamá", "vasectomía sin bisturí", "esterilización masculina", "cuánto cuesta vasectomía panamá"],
+      "duration": "20-30 minutes",
+      "recovery_time": "2-3 days",
+      "anesthesia": "local",
+      "effectiveness": ">99%",
+      "url": "/servicios/vasectomia"
+    },
+    {
+      "name": "Cálculos Renales",
+      "name_en": "Kidney Stones",
+      "description": "Tratamiento avanzado de piedras en riñones con litotricia, ureteroscopía y láser",
+      "keywords": ["cálculos renales panamá", "piedras riñón", "litotricia", "ureteroscopía", "cólico renal"],
+      "technologies": ["ESWL Lithotripsy", "Flexible Ureteroscopy", "Holmium Laser"],
+      "url": "/servicios/calculos-renales"
+    },
+    {
+      "name": "Hiperplasia Prostática (HPB)",
+      "name_en": "Benign Prostatic Hyperplasia (BPH)",
+      "description": "Tratamiento integral del agrandamiento prostático con opciones médicas y quirúrgicas",
+      "keywords": ["próstata agrandada", "hiperplasia prostática", "HPB", "terapia rezum", "TURP panamá"],
+      "treatments": ["Medical Management", "Rezum Therapy", "TURP", "Laser Surgery", "Robotic Surgery"],
+      "url": "/servicios/prostata"
+    },
+    {
+      "name": "Circuncisión",
+      "name_en": "Circumcision",
+      "description": "Procedimiento quirúrgico en adultos y niños para fimosis, parafimosis y otras condiciones",
+      "keywords": ["circuncisión panamá", "circuncisión adultos", "fimosis", "parafimosis", "grietas prepucio"],
+      "patient_types": ["Adults", "Children", "Adolescents"],
+      "url": "/servicios/circuncision"
+    },
+    {
+      "name": "Disfunción Eréctil",
+      "name_en": "Erectile Dysfunction",
+      "description": "Evaluación y tratamiento integral de problemas de erección masculina",
+      "keywords": ["disfunción eréctil panamá", "impotencia", "problemas erección", "viagra", "testosterona"],
+      "treatments": ["PDE5 Inhibitors", "Shockwave Therapy", "Hormone Replacement", "Penile Implants"],
+      "url": "/servicios/disfuncion-erectil"
+    },
+    {
+      "name": "Cirugía Robótica Da Vinci",
+      "name_en": "Da Vinci Robotic Surgery",
+      "description": "Procedimientos urológicos de alta precisión con tecnología robótica mínimamente invasiva",
+      "keywords": ["cirugía robótica panamá", "da vinci urología", "prostatectomía robótica", "cirugía mínimamente invasiva"],
+      "advantages": ["Minimal Incisions", "Faster Recovery", "Less Pain", "High Precision"],
+      "procedures": ["Radical Prostatectomy", "Partial Nephrectomy", "Pyeloplasty", "Cystectomy"],
+      "url": "/servicios/cirugia-robotica"
+    }
+  ],
+  "common_conditions": [
+    {
+      "condition": "Kidney Stones",
+      "spanish": "Cálculos Renales",
+      "symptoms": ["Severe flank pain", "Blood in urine", "Nausea", "Frequent urination"],
+      "urgency": "high"
+    },
+    {
+      "condition": "Benign Prostatic Hyperplasia",
+      "spanish": "Hiperplasia Prostática",
+      "symptoms": ["Weak urine stream", "Frequent urination", "Nighttime urination", "Incomplete bladder emptying"],
+      "urgency": "medium"
+    },
+    {
+      "condition": "Erectile Dysfunction",
+      "spanish": "Disfunción Eréctil",
+      "symptoms": ["Difficulty achieving erection", "Difficulty maintaining erection", "Reduced sexual desire"],
+      "urgency": "medium"
+    },
+    {
+      "condition": "Urinary Tract Infection",
+      "spanish": "Infección Urinaria",
+      "symptoms": ["Burning during urination", "Frequent urination", "Cloudy urine", "Pelvic pain"],
+      "urgency": "medium-high"
+    },
+    {
+      "condition": "Hematuria",
+      "spanish": "Sangre en la Orina",
+      "symptoms": ["Visible blood in urine", "Pink/red/brown urine"],
+      "urgency": "high"
+    }
+  ],
+  "frequently_asked_questions": [
+    {
+      "question": "¿Cuánto cobra un urólogo en Panamá?",
+      "question_en": "How much does a urologist charge in Panama?",
+      "answer": "Los costos varían según el procedimiento. Dr. del Rosario ofrece transparencia en precios. Consulta inicial incluye evaluación completa. Cotizaciones personalizadas disponibles. Se aceptan seguros médicos principales.",
+      "category": "pricing"
+    },
+    {
+      "question": "¿Qué enfermedades detecta un urólogo?",
+      "question_en": "What diseases does a urologist detect?",
+      "answer": "Cálculos renales, cáncer urológico (próstata, riñón, vejiga, testículo), infecciones urinarias, hiperplasia prostática, disfunción eréctil, incontinencia, malformaciones congénitas, prostatitis, y más de 50 condiciones del tracto urinario.",
+      "category": "general"
+    },
+    {
+      "question": "¿Cuándo es necesario ir a un urólogo?",
+      "question_en": "When is it necessary to see a urologist?",
+      "answer": "Si presenta sangre en orina, dolor al orinar, dificultad para orinar, dolor en flancos o testículos, problemas de erección, o como evaluación preventiva en hombres >50 años para detección de cáncer de próstata.",
+      "category": "when_to_visit"
+    },
+    {
+      "question": "¿Qué pasa en la primera cita con el urólogo?",
+      "question_en": "What happens in the first urologist appointment?",
+      "answer": "Historia clínica detallada, examen físico, análisis de orina, PSA si indicado, explicación educativa del diagnóstico, opciones de tratamiento claras, y plan de seguimiento personalizado.",
+      "category": "first_visit"
+    },
+    {
+      "question": "¿Cuánto cuesta una vasectomía en Panamá?",
+      "question_en": "How much does a vasectomy cost in Panama?",
+      "answer": "Precio competitivo, incluye consulta pre-operatoria, procedimiento sin bisturí, seguimiento y análisis confirmatorio. Planes de pago disponibles. Contactar para cotización exacta.",
+      "category": "pricing_vasectomy"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Costa del Este",
+      "description": "Zona moderna con fácil acceso y estacionamiento",
+      "target_demographic": "Affluent, modern facilities"
+    },
+    {
+      "name": "Vía España",
+      "description": "Corredor médico tradicional de Panamá",
+      "target_demographic": "Established medical district"
+    },
+    {
+      "name": "Calle 50",
+      "description": "Distrito financiero y empresarial",
+      "target_demographic": "Business professionals"
+    }
+  ],
+  "contact_methods": {
+    "preferred": "WhatsApp",
+    "web_form": "https://drdelrosario.com/#contacto",
+    "appointment_booking": "Online and WhatsApp",
+    "languages_available": ["Spanish", "English"]
+  },
+  "differentiators": [
+    "Educational consultation style ('like a university class')",
+    "25+ years of specialized experience",
+    "5,000+ successful procedures",
+    "Da Vinci robotic surgery capability",
+    "3 convenient locations in Panama City",
+    "Bilingual care (Spanish/English)",
+    "Evidence-based medicine approach",
+    "Minimally invasive techniques",
+    "Comprehensive follow-up care",
+    "Transparent pricing"
+  ],
+  "insurance_accepted": [
+    "Assa Compañía de Seguros",
+    "Seguros Fedpa",
+    "Seguros Suramericana",
+    "AIG Panama",
+    "PAM (Plan de Asistencia Médica Hospitalaria)"
+  ],
+  "ai_resources": {
+    "comprehensive_documentation": "/ai.md",
+    "llm_index": "/llms.txt",
+    "sitemap": "/sitemap.xml",
+    "robots": "/robots.txt",
+    "structured_data": "Embedded in HTML head"
+  },
+  "seo_priority_keywords": {
+    "primary": [
+      "urólogos en panamá",
+      "vasectomía en panamá",
+      "cálculos renales panamá",
+      "hiperplasia prostática"
+    ],
+    "secondary": [
+      "circuncisión adultos",
+      "disfunción eréctil tratamiento",
+      "cirugía robótica urología",
+      "urólogo costa del este"
+    ],
+    "long_tail": [
+      "cuánto cuesta una vasectomía en panamá",
+      "mejor urólogo en panamá",
+      "tratamiento cálculos renales panamá",
+      "circuncisión sin dolor"
+    ]
+  },
+  "target_audience": {
+    "demographics": [
+      "Men 40-70 years old",
+      "Parents seeking pediatric urology",
+      "Men seeking vasectomy",
+      "Patients with kidney stones",
+      "Men with prostate issues",
+      "Patients seeking second opinions"
+    ],
+    "geographic_reach": [
+      "Panama City",
+      "Costa del Este",
+      "San Francisco",
+      "Casco Antiguo",
+      "Greater Panama metropolitan area",
+      "Expatriate community"
+    ]
+  },
+  "content_strategy": {
+    "tone": "Educational, professional, empathetic",
+    "approach": "Evidence-based medical information",
+    "patient_education_focus": true,
+    "transparency": "Costs, procedures, risks, recovery times"
+  }
+}
