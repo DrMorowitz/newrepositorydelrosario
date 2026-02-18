@@ -148,7 +148,7 @@ export default function HomePage() {
                     </div>
                     <div className="flex items-center space-x-3 p-3 bg-white rounded-lg shadow-sm">
                       <Play className="w-5 h-5 text-purple-600 flex-shrink-0" />
-                      <span className="text-sm font-medium text-foreground">3 Ubicaciones</span>
+                      <span className="text-sm font-medium text-foreground">4 Ubicaciones</span>
                     </div>
                   </div>
                   

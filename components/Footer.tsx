@@ -49,7 +49,7 @@ const Footer = () => {
             </div>
             <p className="text-background/80 leading-relaxed mb-6 max-w-md">
               Urólogo especialista con 25 años de experiencia. Cirugías de próstata, cálculos renales y biopsias. 
-              Explicaciones claras y seguimiento personalizado en 3 ubicaciones.
+              Explicaciones claras y seguimiento personalizado en 4 ubicaciones.
             </p>
             <div className="flex space-x-4">
               <button 
@@ -95,7 +95,10 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-background/60" />
-                <span className="text-background/80 text-sm">The Panama Clinic Torre B Piso 23, CHSF-Coronado, Centro Médico del Caribe-Colón</span>
+                <span className="text-background/80 text-sm">
+                  The Panama Clinic Torre B Piso 23, Consultorios Médicos Costa Pacífico-Coronado,
+                  Consultorios Médicos La Chorrera, Centro Médico del Caribe-Colón
+                </span>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-background/60" />
@@ -125,7 +128,8 @@ const Footer = () => {
               <h4 className="font-medium mb-2 text-sm">Horarios</h4>
               <p className="text-background/80 text-sm">
                 Panama Clinic: Lun - Vie 8:00-17:00<br />
-                CHSF-Coronado: Mar - Jue 14:00-18:00<br />
+                Consultorios Médicos Costa Pacífico-Coronado: Mar - Jue 14:00-18:00<br />
+                Consultorios Médicos La Chorrera: Horario según disponibilidad<br />
                 Centro Caribe-Colón: Mié - Vie 9:00-13:00
               </p>
             </div>

@@ -11,23 +11,28 @@ const ContactPage = () => {
   const content = {
     es: {
       title: "Contacto - Dr. Javier del Rosario Urólogo",
-      subtitle: "Agenda tu consulta en nuestras 3 ubicaciones: The Panama Clinic, CHSF-Coronado, Centro Médico del Caribe-Colón",
+      subtitle: "Agenda tu consulta en nuestras 4 ubicaciones: The Panama Clinic Torre B Piso 23, Consultorios Médicos Costa Pacífico-Coronado, Consultorios Médicos La Chorrera, Centro Médico del Caribe-Colón",
       locations: {
         title: "Nuestras Ubicaciones",
         panama: {
-          name: "The Panama Clinic",
-          address: "Piso 23 Consultorio 2304\nCiudad de Panamá",
+          name: "The Panama Clinic Torre B Piso 23",
+          address: "Torre B Piso 23 Consultorio 2304\nCiudad de Panamá",
           schedule: "Lunes a Viernes: 8:00 AM - 5:00 PM"
         },
         coronado: {
-          name: "Clínica Hospital San Fernando Coronado", 
-          address: "CHSF-Coronado\nAv. Roberto Eisenmann, Coronado",
+          name: "Consultorios Médicos Costa Pacífico-Coronado", 
+          address: "Coronado\nConsultorios Médicos Costa Pacífico",
           schedule: "Martes y Jueves: 2:00 PM - 6:00 PM"
         },
         colon: {
           name: "Centro Médico del Caribe-Colón",
           address: "Colón\nCalle Principal, Colón",
           schedule: "Miércoles y Viernes: 9:00 AM - 1:00 PM"
+        },
+        chorrera: {
+          name: "Consultorios Médicos La Chorrera",
+          address: "La Chorrera\nConsultorios Médicos La Chorrera",
+          schedule: "Citas según disponibilidad"
         }
       },
       contact: {
@@ -36,6 +41,7 @@ const ContactPage = () => {
           panama: "+507 6591-1501",
           coronado: "+507 6591-1501",
           colon: "+507 6591-1501",
+          chorrera: "+507 6591-1501",
           whatsapp: "+507 6591-1501"
         }
       },
@@ -46,23 +52,28 @@ const ContactPage = () => {
     },
     en: {
       title: "Contact - Dr. Javier del Rosario Urologist", 
-      subtitle: "Schedule your consultation at our 3 locations: The Panama Clinic, CHSF-Coronado, Centro Médico del Caribe-Colón",
+      subtitle: "Schedule your consultation at our 4 locations: The Panama Clinic Torre B Piso 23, Consultorios Médicos Costa Pacífico-Coronado, Consultorios Médicos La Chorrera, Centro Médico del Caribe-Colón",
       locations: {
         title: "Our Locations",
         panama: {
-          name: "The Panama Clinic",
-          address: "Floor 23 Office 2304\nPanama City",
+          name: "The Panama Clinic Torre B Piso 23",
+          address: "Torre B Floor 23 Office 2304\nPanama City",
           schedule: "Monday to Friday: 8:00 AM - 5:00 PM"
         },
         coronado: {
-          name: "CHSF-Coronado",
-          address: "Clínica Hospital San Fernando Coronado\nRoberto Eisenmann Ave, Coronado", 
+          name: "Consultorios Médicos Costa Pacífico-Coronado",
+          address: "Coronado\nConsultorios Médicos Costa Pacífico", 
           schedule: "Tuesday and Thursday: 2:00 PM - 6:00 PM"
         },
         colon: {
           name: "Centro Médico del Caribe-Colón",
           address: "Colón\nMain Street, Colón",
           schedule: "Wednesday and Friday: 9:00 AM - 1:00 PM"
+        },
+        chorrera: {
+          name: "Consultorios Médicos La Chorrera",
+          address: "La Chorrera\nConsultorios Médicos La Chorrera",
+          schedule: "By appointment"
         }
       },
       contact: {
@@ -71,6 +82,7 @@ const ContactPage = () => {
           panama: "+507 6591-1501",
           coronado: "+507 6591-1501",
           colon: "+507 6591-1501",
+          chorrera: "+507 6591-1501",
           whatsapp: "+507 6591-1501"
         }
       },
@@ -195,7 +207,7 @@ const ContactPage = () => {
                           <Button
                             size="sm"
                             className="btn-whatsapp"
-                            onClick={() => handleWhatsApp('CHSF-Coronado')}
+                            onClick={() => handleWhatsApp('Consultorios Médicos Costa Pacífico-Coronado')}
                           >
                             <MessageCircle className="w-4 h-4 mr-1" />
                             WhatsApp
@@ -243,6 +255,45 @@ const ContactPage = () => {
                             <a href="https://wa.me/50765911501" target="_blank" rel="noopener noreferrer" className="underline">
                               <Phone className="w-4 h-4 mr-1" />
                               {currentContent.contact.phone.colon}
+                            </a>
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* La Chorrera Location */}
+                  <div className="medical-card">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-6 h-6 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-semibold text-foreground mb-2">
+                          {currentContent.locations.chorrera.name}
+                        </h3>
+                        <p className="text-muted-foreground mb-3 whitespace-pre-line">
+                          {currentContent.locations.chorrera.address}
+                        </p>
+                        <div className="flex items-center space-x-2 mb-4">
+                          <Clock className="w-4 h-4 text-primary" />
+                          <span className="text-sm text-muted-foreground">
+                            {currentContent.locations.chorrera.schedule}
+                          </span>
+                        </div>
+                        <div className="flex space-x-3">
+                          <Button
+                            size="sm"
+                            className="btn-whatsapp"
+                            onClick={() => handleWhatsApp('Consultorios Médicos La Chorrera')}
+                          >
+                            <MessageCircle className="w-4 h-4 mr-1" />
+                            WhatsApp
+                          </Button>
+                          <Button size="sm" variant="outline" asChild>
+                            <a href="https://wa.me/50765911501" target="_blank" rel="noopener noreferrer" className="underline">
+                              <Phone className="w-4 h-4 mr-1" />
+                              {currentContent.contact.phone.chorrera}
                             </a>
                           </Button>
                         </div>
