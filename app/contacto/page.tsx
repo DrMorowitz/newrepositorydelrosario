@@ -20,8 +20,8 @@ const ContactPage = () => {
           schedule: "Lunes a Viernes: 8:00 AM - 5:00 PM"
         },
         coronado: {
-          name: "Consultorios Médicos Costa Pacífico-Coronado", 
-          address: "Coronado\nConsultorios Médicos Costa Pacífico",
+          name: "Consultorios Médicos Costa Pacífico-Coronado",
+          address: "Consultorios Médicos Costa Pacífico\nCentro Comercial The Village\nCoronado",
           schedule: "Martes y Jueves: 2:00 PM - 6:00 PM"
         },
         colon: {
@@ -31,7 +31,7 @@ const ContactPage = () => {
         },
         chorrera: {
           name: "Consultorios Médicos La Chorrera",
-          address: "La Chorrera\nConsultorios Médicos La Chorrera",
+          address: "Avenida Las Américas, La Chorrera",
           schedule: "Citas según disponibilidad"
         }
       },
@@ -62,7 +62,7 @@ const ContactPage = () => {
         },
         coronado: {
           name: "Consultorios Médicos Costa Pacífico-Coronado",
-          address: "Coronado\nConsultorios Médicos Costa Pacífico", 
+          address: "Consultorios Médicos Costa Pacífico\nThe Village Shopping Center\nCoronado",
           schedule: "Tuesday and Thursday: 2:00 PM - 6:00 PM"
         },
         colon: {
@@ -72,7 +72,7 @@ const ContactPage = () => {
         },
         chorrera: {
           name: "Consultorios Médicos La Chorrera",
-          address: "La Chorrera\nConsultorios Médicos La Chorrera",
+          address: "Avenida Las Américas, La Chorrera",
           schedule: "By appointment"
         }
       },
