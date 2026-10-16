@@ -8,6 +8,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import Footer from "@/components/Footer";
 import { DrDelRosarioNavbar } from "@/components/ui/dr-navbar";
 import ChatbotWidget from "@/components/ChatbotWidget";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -174,6 +175,7 @@ export default function RootLayout({
           <Sonner />
         </LanguageProvider>
         <ChatbotWidget />
+        <Analytics />
       </body>
     </html>
   );
